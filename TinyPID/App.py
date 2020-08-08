@@ -12,18 +12,11 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtXml import *
 from PyQt5.QtSvg import *
 from PyQt5 import QtWidgets
-from PluginScope import PluginScope
+# from PluginScope import PluginScope
 
 sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), 'Commands'))
 from AppDocData import AppDocData
-from AutoSaveCommand import AutoSaveCommand
-
-
-def plugin(name):
-    """return plugin module"""
-    plugin_scope = PluginScope.instance()
-    return plugin_scope.get_module(name)
 
 
 class App(QApplication):
@@ -38,21 +31,21 @@ class App(QApplication):
 
         super(App, self).__init__(args)
         app_doc_data = AppDocData.instance()
-        app_style = app_doc_data.loadAppStyle()
+        app_style = app_doc_data.load_app_style()
         self.setStyle(app_style)
 
-        configs = app_doc_data.getAppConfigs('app', 'stylesheet')
+        configs = app_doc_data.get_app_configs('app', 'stylesheet')
         if configs and len(configs) == 1:
-            self.loadStyleSheet(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'stylesheets',
+            self.load_style_sheet(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'stylesheets',
                                              configs[0].value))
             self.stylesheet_name = configs[0].value
         else:
-            self.loadStyleSheet(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'stylesheets', 'coffee'))
+            self.load_style_sheet(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'stylesheets', 'coffee'))
             self.stylesheet_name = 'coffee'
 
         # load language file
         self._translator = None
-        configs = app_doc_data.getAppConfigs('app', 'language')
+        configs = app_doc_data.get_app_configs('app', 'language')
         if configs and len(configs) == 1:
             qm_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'translate', f"{configs[0].value}.qm")
         else:
@@ -66,7 +59,7 @@ class App(QApplication):
 
         QtWidgets.qApp = self
 
-    def loadStyleSheet(self, sheetName):
+    def load_style_sheet(self, sheetName):
         """load application style sheet"""
         try:
             file = QFile('%s.qss' % sheetName.lower())
@@ -108,11 +101,10 @@ class App(QApplication):
 
         return None
 
+
 if __name__ == '__main__':
-    import cv2
-    from License import QLicenseDialog
-    from ProjectDialog import Ui_Dialog
-    from MainWindow import MainWindow
+    from ProjectDialog import ProjectDialog
+    # from MainWindow import MainWindow
     from ExceptionHandler import QExceptionHandler
 
     app = App(sys.argv)
@@ -122,15 +114,11 @@ if __name__ == '__main__':
     app._excepthook = sys.excepthook
     sys.excepthook = app.exception_handler.handler
 
-    if QLicenseDialog.check_license_key():
-        dlg = Ui_Dialog()
-
-        selectedProject = dlg.showDialog()
-        if selectedProject is not None:
-            cmd = AutoSaveCommand()
-
-            AppDocData.instance().setCurrentProject(selectedProject)
+    dlg = ProjectDialog()
+    if QDialogButtonBox.Ok == dlg.exec_():
+        if dlg.selected is not None:
+            AppDocData.instance().setCurrentProject(dlg.selected)
             # AppDocData.instance().ex = exceptionHandler
-            main_wnd = MainWindow.instance()
+            main_wnd = QMainWindow()  # .instance()
             main_wnd.show()
             sys.exit(app.exec_())

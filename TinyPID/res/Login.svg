@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0rc1 (09960d6f05, 2020-04-09)"
+   height="32"
+   width="32"
+   sodipodi:docname="Login.svg"
+   id="svg8"
+   xml:space="preserve"
+   enable-background="new 0 0 1000 1000"
+   viewBox="0 0 32 32"
+   y="0px"
+   x="0px"
+   version="1.1"><defs
+   id="defs12" /><sodipodi:namedview
+   inkscape:current-layer="svg8"
+   inkscape:window-maximized="1"
+   inkscape:window-y="-8"
+   inkscape:window-x="-8"
+   inkscape:cy="8.7776543"
+   inkscape:cx="16.748288"
+   inkscape:zoom="7.552"
+   showgrid="false"
+   id="namedview10"
+   inkscape:window-height="1017"
+   inkscape:window-width="1920"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0"
+   guidetolerance="10"
+   gridtolerance="10"
+   objecttolerance="10"
+   borderopacity="1"
+   bordercolor="#666666"
+   pagecolor="#ffffff" />
+<metadata
+   id="metadata2"> Svg Vector Icons : http://www.onlinewebfonts.com/icon <rdf:RDF><cc:Work
+     rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata>
+<path
+   style="stroke-width:0.033;stroke-miterlimit:4;stroke-dasharray:none;fill:#5274b1;fill-opacity:1"
+   d="M 16,0 C 7.2326531,0 0,7.2326531 0,16 0,24.767347 7.2326531,32 16,32 24.767347,32 32,24.767347 32,16 32,7.2326531 24.767347,0 16,0 Z m 9.642449,26.958367 c 0,-4.38204 -3.288163,-8.11102 -7.232653,-9.204898 2.409796,-0.875102 3.94449,-3.288163 3.94449,-5.916734 0,-3.5069391 -2.850613,-6.3575513 -6.357551,-6.3575513 -3.506939,0 -6.3575513,2.8506122 -6.3575513,6.3575513 0,2.628571 1.7534693,5.041632 3.9444893,5.916734 C 9.4204082,18.850612 6.3510204,22.576327 6.3510204,26.958367 3.2881633,24.329796 1.3159184,20.382041 1.3159184,16 1.3159184,7.8889796 7.8889796,1.3159184 16,1.3159184 c 8.11102,0 14.684082,6.5763265 14.684082,14.6840816 0,4.382041 -1.972245,8.329796 -5.041633,10.958367 z"
+   id="path4"
+   inkscape:connector-curvature="0" />
+</svg>
