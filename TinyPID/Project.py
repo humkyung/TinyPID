@@ -7,20 +7,17 @@ from AppDatabase import AppDatabase
 
 
 class Project:
-    DATABASE = 'ITI_PID.db'
+    DATABASE = 'TinyPID.db'
 
     def __init__(self, project):
         self.id = project['Id']
         self._name = project['Name']
         self._desc = project['Desc']
         self._prj_unit = project['Unit']
-        self.path = project['Path']
+        self._path = project['Path']
         self.createDate = project['CreatedDate']
         self.updateDate = project['UpdatedDate']
-        self._database = AppDatabase(type=project['DBType'], host=project['Host'], user=project['User'],
-                                     password=project['Password'],
-                                     db_path=os.path.join(self.path, 'db', Project.DATABASE) if
-                                     project['DBType'] == 'SQLite' else project['Name'])
+        self._database = None
 
     def setId(self, id):
         self.id = id
@@ -58,11 +55,17 @@ class Project:
         """ return database instance """
         return self._database
 
-    def setPath(self, path):
-        self.path = path
+    @database.setter
+    def database(self, value):
+        self._database = value
 
-    def getPath(self):
-        return self.path
+    @property
+    def path(self):
+        return self._path
+
+    @path.setter
+    def path(self, value):
+        self._path = value
 
     '''
         @brief  return drawing file path
@@ -91,14 +94,9 @@ class Project:
     def getImageFilePath(self):
         return os.path.join(self.getPath(), 'image')
 
-    '''
-        @brief  return db file path
-        @author Jeongwoo
-        @date   2018.04.10
-    '''
-
-    def getDbFilePath(self):
-        return os.path.join(self.getPath(), 'db')
+    def get_database_file_path(self):
+        """return database file path"""
+        return os.path.join(self.path, 'db')
 
     '''
         @brief  return svg file path

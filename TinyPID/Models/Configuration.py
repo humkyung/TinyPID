@@ -15,7 +15,7 @@ class Configuration(Base):
         PrimaryKeyConstraint('section', 'key', name='Configuration_PK'),
     )
 
-    section = Column(String(37), primary_key=True)
+    section = Column(String(37))
     key = Column(String)
     value = Column(String)
 

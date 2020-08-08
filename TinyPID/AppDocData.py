@@ -55,10 +55,9 @@ class AppDocData(SingletonInstane):
         app_database_filepath = os.path.join(path, 'App.db')
 
         if os.path.exists(path):
-            database = AppDatabase(db_type=DBType.SQLITE, host=None, user=None, password=None,
-                                   db_path=app_database_filepath)
-            Project.__table__.create(bind=database.engine, checkfirst=True)
-            Configuration.__table__.create(bind=database.engine, checkfirst=True)
+            with AppDatabase(db_type=DBType.SQLITE, host=None, user=None, password=None, db_path=app_database_filepath) as database:
+                Project.__table__.create(bind=database.engine, checkfirst=True)
+                Configuration.__table__.create(bind=database.engine, checkfirst=True)
 
     def get_projects(self):
         from App import App
@@ -68,9 +67,35 @@ class AppDocData(SingletonInstane):
         path = os.path.join(os.getenv('ALLUSERSPROFILE'), App.NAME)
         app_database_filepath = os.path.join(path, 'App.db')
 
-        database = AppDatabase(db_type=DBType.SQLITE, host=None, user=None, password=None,
-                               db_path=app_database_filepath)
-        return database.session.query(Project).all()
+        with AppDatabase(db_type=DBType.SQLITE, host=None, user=None, password=None, db_path=app_database_filepath) as database:
+            return database.session.query(Project).all()
+
+    def insert_project_info(self, dir, desc, prj_unit):
+        import uuid
+        from App import App
+        from AppDatabase import AppDatabase, DBType
+        from Models.Project import Project
+
+        path = os.path.join(os.getenv('ALLUSERSPROFILE'), App.NAME)
+        app_database_filepath = os.path.join(path, 'App.db')
+
+        with AppDatabase(db_type=DBType.SQLITE, host=None, user=None, password=None, db_path=app_database_filepath) as database:
+            database.session.add(Project(id=str(uuid.uuid4()), name=os.path.basename(dir), desc=desc, prj_unit=prj_unit,
+                                         path=dir))
+            database.session.commit()
+
+    def update_project_updated_date(self, project):
+        from App import App
+        from AppDatabase import AppDatabase, DBType
+        from Models.Project import Project
+
+        path = os.path.join(os.getenv('ALLUSERSPROFILE'), App.NAME)
+        app_database_filepath = os.path.join(path, 'App.db')
+
+        with AppDatabase(db_type=DBType.SQLITE, host=None, user=None, password=None,
+                         db_path=app_database_filepath) as database:
+            database.session.query(Project).filter(Project.id == project.id).update({'update_date': datetime.datetime.now()})
+            database.session.commit()
 
     def load_app_style(self):
         """load app style"""

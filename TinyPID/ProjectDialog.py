@@ -4,7 +4,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 import os
 from Project import Project
-# from AppDocData import AppDocData
+from AppDocData import AppDocData
 from UI.Project_UI import Ui_ProjectDialog
 
 
@@ -58,29 +58,30 @@ class ProjectDialog(QDialog):
 
     def accept(self):
         """accept project"""
-        """
+        from AppDatabase import AppDatabase, DBType
+
         index = self.ui.comboBox.currentIndex()
         project = self.ui.comboBox.itemData(index)
         prj_desc = self.ui.lineEditProjectDesc.text()
         prj_unit = self.ui.comboBoxProjectUnit.currentText()
-        if project is not None:
+        if project:
             project.desc = prj_desc
             project.prj_unit = prj_unit
-            project.database.db_type = 'SQLite' if self.ui.radioButtonSQLite.isChecked() else 'MSSQL'
-            if project.database.db_type == 'MSSQL':
-                project.database.host = self.ui.lineEditServer.text()
-                project.database.user = self.ui.lineEditUser.text()
-                project.database.password = self.ui.lineEditPassword.text()
-                project.database.file_path = project.name
+            db_type = DBType.SQLITE if self.ui.radioButtonSQLite.isChecked() else DBType.MSSQL
+            if db_type == DBType.MSSQL:
+                project.database = AppDatabase(db_type=DBType.MSSQL,
+                                               host=self.ui.lineEditServer.text(),
+                                               user=self.ui.lineEditUser.text(),
+                                               password=self.ui.lineEditPassword.text(),
+                                               db_path=project.name)
             else:
-                project.database.host = None
-                project.database.user = None
-                project.database.password = None
-                project.database.file_path = os.path.join(project.getDbFilePath(), Project.DATABASE)
+                project.database = AppDatabase(db_type=DBType.SQLITE,
+                                               host=None,
+                                               user=None,
+                                               password=None,
+                                               db_path=os.path.join(project.get_database_file_path(), Project.DATABASE))
 
-            AppDocData.instance().updateProjectUpdatedDate(project)
-            self.selectedProject = True
-        """
+            AppDocData.instance().update_project_updated_date(project)
 
         QDialog.accept(self)
 
@@ -175,7 +176,7 @@ class ProjectDialog(QDialog):
             mb.exec_()
 
     def insert_project_info(self, desc, prj_unit, dir):
-        # AppDocData.instance().insertProjectInfo(dir=dir, desc=desc, prj_unit=prj_unit)
+        AppDocData.instance().insert_project_info(dir=dir, desc=desc, prj_unit=prj_unit)
         self.init_combobox()
 
 # if __name__ == "__main__":

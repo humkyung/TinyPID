@@ -17,10 +17,11 @@ class Project(Base):
     desc = Column(String)
     prj_unit = Column(String)
     path = Column(String)
-    create_date = Column(DateTime, default=datetime.datetime.utcnow)
-    update_date = Column(DateTime, default=datetime.datetime.utcnow)
+    create_date = Column(DateTime, default=datetime.datetime.now())
+    update_date = Column(DateTime, default=datetime.datetime.now())
 
-    def __init__(self, id, name, desc, prj_unit, path, create_date, update_date):
+    def __init__(self, id, name, desc, prj_unit, path, create_date=datetime.datetime.now(),
+                 update_date=datetime.datetime.now()):
         self.id = id
         self.name = name
         self.desc = desc
@@ -31,4 +32,10 @@ class Project(Base):
 
     def __repr__(self):
         return f"<Project({self.name}, {self.desc}, {self.prj_unit})>"
+
+    def get_database_file_path(self):
+        """return database file path"""
+        import os
+
+        return os.path.join(self.path, 'db')
 

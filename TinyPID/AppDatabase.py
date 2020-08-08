@@ -23,9 +23,7 @@ class AppDatabase(object):
 
     def __init__(self, db_type, host, user, password, db_path):
         if db_type == DBType.SQLITE:
-            engine_url = self.DB_ENGINE[db_type].format(DB=db_path)
-            self.engine = create_engine(engine_url)
-            self.session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=self.engine))
+            self.engine_url = self.DB_ENGINE[db_type].format(DB=db_path)
         elif db_type == DBType.MSSQL:
             pass
         else:
@@ -37,9 +35,15 @@ class AppDatabase(object):
         self._password = password
         self._db_path = db_path
 
-    def __del__(self):
+    def __enter__(self):
+        """with구문 진입시에 db와 connection을 하고 ORM을 사용하기 위한 session을 만들어준다."""
+        self.engine = create_engine(self.engine_url)
+        self.session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=self.engine))
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """with구문을 빠져나오기 전 session 종료한다."""
         self.session.close()
-        self.engine.dispose()
 
     @property
     def db_type(self):
