@@ -11,7 +11,7 @@ a = Analysis(['.\\TinyPID\\App.py'],
 		('.\\TinyPID\\stylesheets\\*.qss', 'stylesheets'),
 		('.\\TinyPID\\translate\\*.qm', 'translate')
 	],
-	hiddenimports=[],
+	hiddenimports=['pkg_resources.py2_warn'],
 	hookspath=[],
 	runtime_hooks=[],
 	excludes=[],
