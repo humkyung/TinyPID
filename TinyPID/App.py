@@ -104,7 +104,7 @@ class App(QApplication):
 
 if __name__ == '__main__':
     from ProjectDialog import ProjectDialog
-    # from MainWindow import MainWindow
+    from MainWindow import MainWindow
     from ExceptionHandler import QExceptionHandler
 
     app = App(sys.argv)
@@ -115,10 +115,10 @@ if __name__ == '__main__':
     sys.excepthook = app.exception_handler.handler
 
     dlg = ProjectDialog()
-    if QDialogButtonBox.Ok == dlg.exec_():
+    if QDialog.Accepted == dlg.exec_():
         if dlg.selected is not None:
-            AppDocData.instance().setCurrentProject(dlg.selected)
+            AppDocData.instance().current_project = dlg.selected
             # AppDocData.instance().ex = exceptionHandler
-            main_wnd = QMainWindow()  # .instance()
+            main_wnd = MainWindow.instance()
             main_wnd.show()
             sys.exit(app.exec_())

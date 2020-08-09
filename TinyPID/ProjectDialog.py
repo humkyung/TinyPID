@@ -35,9 +35,11 @@ class ProjectDialog(QDialog):
         self.ui.comboBoxProjectUnit.setHidden(True)
         self.ui.label_3.setHidden(True)
 
+        self._selected = None
+
     @property
     def selected(self):
-        return None
+        return self._selected
 
     def init_combobox(self):
         from AppDocData import AppDocData
@@ -61,27 +63,28 @@ class ProjectDialog(QDialog):
         from AppDatabase import AppDatabase, DBType
 
         index = self.ui.comboBox.currentIndex()
-        project = self.ui.comboBox.itemData(index)
+        self._selected = self.ui.comboBox.itemData(index)
         prj_desc = self.ui.lineEditProjectDesc.text()
         prj_unit = self.ui.comboBoxProjectUnit.currentText()
-        if project:
-            project.desc = prj_desc
-            project.prj_unit = prj_unit
+        if self._selected:
+            self._selected.desc = prj_desc
+            self._selected.prj_unit = prj_unit
             db_type = DBType.SQLITE if self.ui.radioButtonSQLite.isChecked() else DBType.MSSQL
             if db_type == DBType.MSSQL:
-                project.database = AppDatabase(db_type=DBType.MSSQL,
-                                               host=self.ui.lineEditServer.text(),
-                                               user=self.ui.lineEditUser.text(),
-                                               password=self.ui.lineEditPassword.text(),
-                                               db_path=project.name)
+                self._selected.database = AppDatabase(db_type=DBType.MSSQL,
+                                                      host=self.ui.lineEditServer.text(),
+                                                      user=self.ui.lineEditUser.text(),
+                                                      password=self.ui.lineEditPassword.text(),
+                                                      db_path=self._selected.name)
             else:
-                project.database = AppDatabase(db_type=DBType.SQLITE,
-                                               host=None,
-                                               user=None,
-                                               password=None,
-                                               db_path=os.path.join(project.get_database_file_path(), Project.DATABASE))
+                self._selected.database = AppDatabase(db_type=DBType.SQLITE,
+                                                      host=None,
+                                                      user=None,
+                                                      password=None,
+                                                      db_path=os.path.join(self._selected.get_database_file_path(),
+                                                                           Project.DATABASE))
 
-            AppDocData.instance().update_project_updated_date(project)
+            AppDocData.instance().update_project_updated_date(self._selected)
 
         QDialog.accept(self)
 

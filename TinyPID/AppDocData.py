@@ -16,6 +16,8 @@ except ImportError:
     from PyQt4.QtGui import *
 
 from SingletonInstance import SingletonInstane
+from AppDatabase import AppDatabase, DBType
+from Models.Project import Project
 
 
 class Config:
@@ -34,7 +36,7 @@ class MessageType(Enum):
 
 class AppDocData(SingletonInstane):
     def __init__(self):
-        pass
+        self._current_project = None
 
     def get_app_db_path(self) -> str:
         """Get application DB file path in ProgramData"""
@@ -178,32 +180,20 @@ class AppDocData(SingletonInstane):
 
     def save_app_configs(self, configs):
         """save application configurations"""
-
-        dbPath = self.get_app_db_path()
-        with sqlite3.connect(dbPath) as conn:
+        app_database_filepath = self.get_app_db_path()
+        with AppDatabase(db_type=DBType.SQLITE, host=None, user=None, password=None,
+                         db_path=app_database_filepath) as database:
             try:
-                conn.execute('PRAGMA foreign_keys = ON')
-                # Get a cursor object
-                cursor = conn.cursor()
-
                 for config in configs:
-                    value = config.value
-                    if type(value) is str and "'" in value:
-                        value = value.replace("'", "''")
-
-                    sql = "insert or replace into configuration values(?,?,?)"
-                    param = (config.section, config.key, value)
-
-                    cursor.execute(sql, param)
-                conn.commit()
-            # Catch the exception
+                    database.session.merge(config)
+                database.session.commit()
             except Exception as ex:
                 from App import App
                 # Roll back any change if something goes wrong
-                conn.rollback()
+                database.session.rollback()
 
-                message = 'error occurred({}) in {}:{}'.format(ex, sys.exc_info()[-1].tb_frame.f_code.co_filename,
-                                                               sys.exc_info()[-1].tb_lineno)
+                message = f"error occurred({repr(ex)}) in {sys.exc_info()[-1].tb_frame.f_code.co_filename}:" \
+                          f"{sys.exc_info()[-1].tb_lineno}"
                 App.main_wnd().addMessage.emit(MessageType.Error, message)
 
     def save_configs(self, configs):
@@ -264,4 +254,12 @@ class AppDocData(SingletonInstane):
                 message = 'error occurred({}) in {}:{}'.format(ex, sys.exc_info()[-1].tb_frame.f_code.co_filename,
                                                                sys.exc_info()[-1].tb_lineno)
                 App.main_wnd().addMessage.emit(MessageType.Error, message)
+
+    @property
+    def current_project(self):
+        return self._current_project
+
+    @current_project.setter
+    def current_project(self, value):
+        self._current_project = value
 

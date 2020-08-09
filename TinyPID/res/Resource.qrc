@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>New.svg</file>
     <file>Add.svg</file>
     <file>Remove.svg</file>
     <file>Project.svg</file>
@@ -9,12 +10,11 @@
     <file>Rotate_Plus.svg</file>
     <file>Vendor.svg</file>
     <file>table_ocr.png</file>
-    <file>svg.png</file>
     <file>zoom_area.png</file>
     <file>remove-text.png</file>
     <file>symbol_management.png</file>
-    <file>project.png</file>
     <file>hand.png</file>
+    <file>TinyPID.ico</file>
     <file>symbol_editor.png</file>
     <file>redo.png</file>
     <file>convertPDF.png</file>
