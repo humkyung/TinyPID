@@ -1,0 +1,1 @@
+%CURL% -uhumkyung:Gmarud100$ -X PUT "http://home.atools.co.kr:8081/artifactory/TinyPID/TinyPID-%1.msi" -T "./Setup/TinyPID-%1.msi"
