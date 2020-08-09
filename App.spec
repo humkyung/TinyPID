@@ -8,7 +8,6 @@ a = Analysis(['.\\TinyPID\\App.py'],
 	pathex=['.\\TinyPID', '.\\TinyPID\\UI', '.\\TinyPID\\Models', '.\\TinyPID\\Commands'],
 	binaries=[],
 	datas=[
-		('.\\TinyPID\\Scripts\\*.sql', 'Scripts'),
 		('.\\TinyPID\\stylesheets\\*.qss', 'stylesheets'),
 		('.\\TinyPID\\translate\\*.qm', 'translate')
 	],
