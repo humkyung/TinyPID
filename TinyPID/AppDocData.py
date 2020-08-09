@@ -48,8 +48,6 @@ class AppDocData(SingletonInstane):
 
     def build_app_database(self) -> None:
         """build application database"""
-        pass
-        """
         from App import App
         from AppDatabase import AppDatabase, DBType
         from Models.Project import Project
@@ -62,7 +60,6 @@ class AppDocData(SingletonInstane):
             with AppDatabase(db_type=DBType.SQLITE, host=None, user=None, password=None, db_path=app_database_filepath) as database:
                 Project.__table__.create(bind=database.engine, checkfirst=True)
                 Configuration.__table__.create(bind=database.engine, checkfirst=True)
-        """
 
     def get_projects(self):
         from App import App

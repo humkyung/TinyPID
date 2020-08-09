@@ -30,6 +30,8 @@ class App(QApplication):
         import locale
 
         super(App, self).__init__(args)
+        self._main_wnd = None
+
         app_doc_data = AppDocData.instance()
         app_style = app_doc_data.load_app_style()
         self.setStyle(app_style)
@@ -54,8 +56,6 @@ class App(QApplication):
 
         self.load_language(qm_file)
         # up to here
-
-        self._main_wnd = None
 
         QtWidgets.qApp = self
 
