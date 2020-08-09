@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="TinyPID" Language="1033" Version="{VERSION}" Manufacturer="ATOOLS(C)" UpgradeCode="766BE318-7FB9-4EC5-B116-9F63F0915FE5">
+	<Product Id="*" Name="TinyPID" Language="1033" Version="1.0.6.0" Manufacturer="ATOOLS(C)" UpgradeCode="766BE318-7FB9-4EC5-B116-9F63F0915FE5">
 		<Package Platform="x64" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade Schedule="afterInstallInitialize" DowngradeErrorMessage="A newer version of [ProductName] is already installed. Setup will now exit." AllowSameVersionUpgrades="yes"/>
@@ -71,12 +71,8 @@
 	
 	<Fragment>
         <DirectoryRef Id="INSTALLFOLDER">
-            <Directory Id="dir57BB962486B55B28FC45B65CCD902110" Name="cv2" />
             <Directory Id="dir4A75851B3F11AB4A6A14A144CF144CDE" Name="Include" />
-            <Directory Id="dir06F962092CAFAD736E2E47442677063D" Name="lib2to3" />
-            <Directory Id="dirA3D7EF843ACC83D2E3C9C01BBF3BBD99" Name="numpy" />
             <Directory Id="dir0395578F1B049DC836212B0E8A74915E" Name="PyQt5" />
-            <Directory Id="dir33A2F09B010813323099475AA1D7838F" Name="Scripts" />
             <Directory Id="dirA354B468353E829B671E63FA008B58F2" Name="sqlalchemy" />
             <Directory Id="dirF6CA20EBB048934B5A0428563D0FA356" Name="stylesheets" />
             <Directory Id="dir2858E6757EEE7E6A5EF2129279E3829D" Name="translate" />
@@ -85,558 +81,452 @@
     
 	<Fragment>
         <ComponentGroup Id="TinyPID">
-            <Component Id="cmpF22D40156F8E16FBFA89C752FF9D0EF9" Directory="INSTALLFOLDER" Guid="5896D802-2556-4EF1-9293-ECBFA8387FE5" Win64="yes">
+            <Component Id="cmpF22D40156F8E16FBFA89C752FF9D0EF9" Directory="INSTALLFOLDER" Guid="47DD8611-501D-4AB2-A4B0-5753D95D06E6" Win64="yes">
                 <File Id="fil2DACDED111D2125FD9BAF52808E5CEB0" KeyPath="yes" Source=".\dist\App\api-ms-win-core-console-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp742C123932C1A216E185167E7780B396" Directory="INSTALLFOLDER" Guid="A8B79A34-D70E-4459-A791-FE42A9828D0A" Win64="yes">
+            <Component Id="cmp742C123932C1A216E185167E7780B396" Directory="INSTALLFOLDER" Guid="F92E073D-CFF9-4221-AE24-7A0BAB90C8A2" Win64="yes">
                 <File Id="filD4F5DAB6FC380871476D90A9B278B655" KeyPath="yes" Source=".\dist\App\api-ms-win-core-datetime-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp0C2E6E9A00C3293AC27A114F5CD9CE2A" Directory="INSTALLFOLDER" Guid="C07570EA-DCD7-4876-913D-C03056D51F29" Win64="yes">
+            <Component Id="cmp0C2E6E9A00C3293AC27A114F5CD9CE2A" Directory="INSTALLFOLDER" Guid="B3E02638-E303-4850-8BD8-C0EB3B5161B1" Win64="yes">
                 <File Id="filC4BA033347D114D73E0BFDC4F138ED4B" KeyPath="yes" Source=".\dist\App\api-ms-win-core-debug-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp6EBAE5ACCACC27065A435A0042E7BAED" Directory="INSTALLFOLDER" Guid="6AEAB95D-1596-46DA-B25E-12153B36473E" Win64="yes">
+            <Component Id="cmp6EBAE5ACCACC27065A435A0042E7BAED" Directory="INSTALLFOLDER" Guid="0868F140-905C-4CAD-93F5-786C342C6625" Win64="yes">
                 <File Id="filBE3E8E1D40266192494C4DD3D256E4B0" KeyPath="yes" Source=".\dist\App\api-ms-win-core-errorhandling-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp8654E1D8A29D75D1863BECEDD37AC0AE" Directory="INSTALLFOLDER" Guid="4F595989-6B44-4381-AFB4-5E9D39CB722A" Win64="yes">
+            <Component Id="cmp8654E1D8A29D75D1863BECEDD37AC0AE" Directory="INSTALLFOLDER" Guid="AAE3D724-45ED-4929-BCF6-D76C4265DC4D" Win64="yes">
                 <File Id="filDFD8964B5B00E12A86C400251EF6F77E" KeyPath="yes" Source=".\dist\App\api-ms-win-core-file-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp41E89377B0002CC2350CF2F309C7EF96" Directory="INSTALLFOLDER" Guid="54F59911-AB4D-45E2-B564-6115E6947599" Win64="yes">
+            <Component Id="cmp41E89377B0002CC2350CF2F309C7EF96" Directory="INSTALLFOLDER" Guid="5DA3D740-1665-4270-80EB-615BC3B8F581" Win64="yes">
                 <File Id="filED19878F18A70E195BF8CDAA0D0E8890" KeyPath="yes" Source=".\dist\App\api-ms-win-core-file-l1-2-0.dll" />
             </Component>
-            <Component Id="cmpDEE5CBC14AEA029E9F4401E5B3982607" Directory="INSTALLFOLDER" Guid="A86F27BE-0F47-4899-85B3-BD4E2705069F" Win64="yes">
+            <Component Id="cmpDEE5CBC14AEA029E9F4401E5B3982607" Directory="INSTALLFOLDER" Guid="1B956ECC-E51F-4CD6-868C-F51B429384EB" Win64="yes">
                 <File Id="fil99A16235893D27C698F1132A81059440" KeyPath="yes" Source=".\dist\App\api-ms-win-core-file-l2-1-0.dll" />
             </Component>
-            <Component Id="cmp590BD4AE87E294D1563CF4D557250096" Directory="INSTALLFOLDER" Guid="B10F4B02-75E9-481E-A543-EFDAE34B42EC" Win64="yes">
+            <Component Id="cmp590BD4AE87E294D1563CF4D557250096" Directory="INSTALLFOLDER" Guid="AC0492C5-4365-493B-94B6-73EC7CD9A0B6" Win64="yes">
                 <File Id="filD5657AEC19C9FC8E0AF60F470875CF64" KeyPath="yes" Source=".\dist\App\api-ms-win-core-handle-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpCF2CF8C7A0C59052CAA01587AA5785DC" Directory="INSTALLFOLDER" Guid="CD47D137-3D26-49B3-8326-44CCB6DEE07D" Win64="yes">
+            <Component Id="cmpCF2CF8C7A0C59052CAA01587AA5785DC" Directory="INSTALLFOLDER" Guid="7F801C4E-AF61-4EBE-A117-CCCCD84E3DED" Win64="yes">
                 <File Id="fil522696687E0EECCAA70A0E9D409F1AFF" KeyPath="yes" Source=".\dist\App\api-ms-win-core-heap-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpDD279108FA0E596011006D554F6A3104" Directory="INSTALLFOLDER" Guid="989F4BB9-D9F4-411D-B1E1-38B0818E905D" Win64="yes">
+            <Component Id="cmpDD279108FA0E596011006D554F6A3104" Directory="INSTALLFOLDER" Guid="86711C34-6B8A-47AC-8D99-3643188AD9F0" Win64="yes">
                 <File Id="fil87D340479265677CE6A63011B082D90C" KeyPath="yes" Source=".\dist\App\api-ms-win-core-interlocked-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpCD74B7BA0C179921851020BBB033014C" Directory="INSTALLFOLDER" Guid="963F0394-840F-4720-A567-D2F46F202A9A" Win64="yes">
+            <Component Id="cmpCD74B7BA0C179921851020BBB033014C" Directory="INSTALLFOLDER" Guid="9E455960-CC3A-4B0F-9B8C-EA00A58E7C1A" Win64="yes">
                 <File Id="fil2B1C02B60D25396B459A4FD75F2C3397" KeyPath="yes" Source=".\dist\App\api-ms-win-core-libraryloader-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpAC8BDC4BFF75C5529DB6BFA54526ED0C" Directory="INSTALLFOLDER" Guid="40BE115A-9E32-48C5-BE35-783A6E9B2ED3" Win64="yes">
+            <Component Id="cmpAC8BDC4BFF75C5529DB6BFA54526ED0C" Directory="INSTALLFOLDER" Guid="7AF246F6-ED27-4E25-98AE-F7A7F2E0C74E" Win64="yes">
                 <File Id="fil166AA52FFB5EC305E92912AB1AD3E8BE" KeyPath="yes" Source=".\dist\App\api-ms-win-core-localization-l1-2-0.dll" />
             </Component>
-            <Component Id="cmp8C8498D921E5B275BE6C7E3DA8DCEB68" Directory="INSTALLFOLDER" Guid="0E273219-B9AE-475C-8649-372FDC90C6D6" Win64="yes">
+            <Component Id="cmp8C8498D921E5B275BE6C7E3DA8DCEB68" Directory="INSTALLFOLDER" Guid="8CC5C958-375F-4EF8-85F6-BF0EC8224670" Win64="yes">
                 <File Id="fil119FC388EE479D2497F4E5235A4D0A0D" KeyPath="yes" Source=".\dist\App\api-ms-win-core-memory-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp9AE39696CCE4B2BA21A7559EDA2F0D90" Directory="INSTALLFOLDER" Guid="9C07C5A8-0444-4871-B5BB-5AEC293441BF" Win64="yes">
+            <Component Id="cmp9AE39696CCE4B2BA21A7559EDA2F0D90" Directory="INSTALLFOLDER" Guid="E4C4F9FC-0EAE-4F4B-A7B5-59068C921243" Win64="yes">
                 <File Id="filAF1A85247BFD7049AEE00A37035FC723" KeyPath="yes" Source=".\dist\App\api-ms-win-core-namedpipe-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp5D145C20D5E90C9E54B87DDC549105EA" Directory="INSTALLFOLDER" Guid="94332D02-74CA-4C43-A40B-E6A8025E6DCE" Win64="yes">
+            <Component Id="cmp5D145C20D5E90C9E54B87DDC549105EA" Directory="INSTALLFOLDER" Guid="A17D61A2-9348-4192-B456-13522A3BAFB3" Win64="yes">
                 <File Id="filED53139C4E70E2ED3BF5C20A13EF04C9" KeyPath="yes" Source=".\dist\App\api-ms-win-core-processenvironment-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp4BC27243200E3663A58563BC8AD5A268" Directory="INSTALLFOLDER" Guid="1BA55EBA-A5DE-485A-82DC-D4F93B14C682" Win64="yes">
+            <Component Id="cmp4BC27243200E3663A58563BC8AD5A268" Directory="INSTALLFOLDER" Guid="D96CB9EB-4FF7-4869-AD87-E1C67528B444" Win64="yes">
                 <File Id="fil6C98F7250E35758DF2EAE6D18757B52A" KeyPath="yes" Source=".\dist\App\api-ms-win-core-processthreads-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp3C1343875198F364F70980382E32F197" Directory="INSTALLFOLDER" Guid="CC1E9DF1-D348-4EFE-B9EC-781ECFF088F8" Win64="yes">
+            <Component Id="cmp3C1343875198F364F70980382E32F197" Directory="INSTALLFOLDER" Guid="6362A360-2067-43B2-82FB-07724E9E4948" Win64="yes">
                 <File Id="filDCFF49060A8650BC3CD76399B278EFB3" KeyPath="yes" Source=".\dist\App\api-ms-win-core-processthreads-l1-1-1.dll" />
             </Component>
-            <Component Id="cmpECDFB8DD1F83358D411D63B1F980153E" Directory="INSTALLFOLDER" Guid="432E8CA7-4919-45D9-8798-DCFE856681A5" Win64="yes">
+            <Component Id="cmpECDFB8DD1F83358D411D63B1F980153E" Directory="INSTALLFOLDER" Guid="5AC2371D-FAE9-4452-9217-73D914389F04" Win64="yes">
                 <File Id="fil473C62601D1A459892F1035DC46D5837" KeyPath="yes" Source=".\dist\App\api-ms-win-core-profile-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp1E66ED1BF30236B52829E44485A58E50" Directory="INSTALLFOLDER" Guid="FAFF4B5A-BB44-4ADC-AB17-FB09A13712BA" Win64="yes">
+            <Component Id="cmp1E66ED1BF30236B52829E44485A58E50" Directory="INSTALLFOLDER" Guid="D2AD4738-E153-4391-BF34-D89A2DBB6363" Win64="yes">
                 <File Id="fil86B1657D34671048F554605B02204614" KeyPath="yes" Source=".\dist\App\api-ms-win-core-rtlsupport-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp43C0DEA19BA8D8C7F25F0DD08B502FBD" Directory="INSTALLFOLDER" Guid="520D89CC-E51E-49D8-B1E1-ADFE58652782" Win64="yes">
+            <Component Id="cmp43C0DEA19BA8D8C7F25F0DD08B502FBD" Directory="INSTALLFOLDER" Guid="E1C0D71D-9C16-4DC5-AB4E-08ECD8127B72" Win64="yes">
                 <File Id="filFAB349D875247DA20FBC6095A574364F" KeyPath="yes" Source=".\dist\App\api-ms-win-core-string-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpBE4AFE403859DE3CDCB4C17CE29AD9B1" Directory="INSTALLFOLDER" Guid="33E8DF5A-804A-4ECF-8484-8060F3AB27D2" Win64="yes">
+            <Component Id="cmpBE4AFE403859DE3CDCB4C17CE29AD9B1" Directory="INSTALLFOLDER" Guid="D3A6A916-A12F-4237-8004-9E0AAA010C85" Win64="yes">
                 <File Id="filE7772A0EC4C57BADD6BD4261E7E1D733" KeyPath="yes" Source=".\dist\App\api-ms-win-core-synch-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp6FB01AFC7883E57A54B9364FE007F69A" Directory="INSTALLFOLDER" Guid="9B8F638D-BA6C-4684-A250-32803868CA54" Win64="yes">
+            <Component Id="cmp6FB01AFC7883E57A54B9364FE007F69A" Directory="INSTALLFOLDER" Guid="8B99A3EF-837C-4FF0-B656-01987751F4F2" Win64="yes">
                 <File Id="filC694EB3BC04DCB9743E89D8C9FCA39F3" KeyPath="yes" Source=".\dist\App\api-ms-win-core-synch-l1-2-0.dll" />
             </Component>
-            <Component Id="cmp34831A79EBBEDE365CF8E47BB8DA4AEE" Directory="INSTALLFOLDER" Guid="A365474C-EE73-45C1-9843-354A1C414866" Win64="yes">
+            <Component Id="cmp34831A79EBBEDE365CF8E47BB8DA4AEE" Directory="INSTALLFOLDER" Guid="BEBE761E-B6E6-4D64-B892-0CF0B5B802A3" Win64="yes">
                 <File Id="fil156E0DB27CC93BDB6B5984208AF58408" KeyPath="yes" Source=".\dist\App\api-ms-win-core-sysinfo-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpC5B1C289707493DC1A9765CBF1619688" Directory="INSTALLFOLDER" Guid="37A1E027-AA49-43F9-9FC1-A0386F07DDF7" Win64="yes">
+            <Component Id="cmpC5B1C289707493DC1A9765CBF1619688" Directory="INSTALLFOLDER" Guid="83231620-556C-45D5-BDB5-3E92733D7406" Win64="yes">
                 <File Id="filF7650F0EE0391337B997E96186D1FABA" KeyPath="yes" Source=".\dist\App\api-ms-win-core-timezone-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpBDCBA58D640E71BC077901A457EFAA06" Directory="INSTALLFOLDER" Guid="A6F2F2AC-55D8-4589-A56E-FB87EE98CFDA" Win64="yes">
+            <Component Id="cmpBDCBA58D640E71BC077901A457EFAA06" Directory="INSTALLFOLDER" Guid="5D06515C-865D-45F3-86CD-61CBCC8082ED" Win64="yes">
                 <File Id="fil8D8B394F6F988ACC1E93C0D7A19BF8E9" KeyPath="yes" Source=".\dist\App\api-ms-win-core-util-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp74F6E981444243E078C5E033BD078819" Directory="INSTALLFOLDER" Guid="A46F4039-1BB2-4F8D-9D7B-F6C06E34B4A6" Win64="yes">
+            <Component Id="cmp74F6E981444243E078C5E033BD078819" Directory="INSTALLFOLDER" Guid="14E21743-C505-4847-A38E-8537F3E72AE0" Win64="yes">
                 <File Id="fil27C5261AF57F48008AECF60CB43570E2" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-conio-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp20DD0168324B65A2B89EB723FB32E7F3" Directory="INSTALLFOLDER" Guid="28314D07-5B61-48E6-8996-ADBE11CEF2C7" Win64="yes">
+            <Component Id="cmp20DD0168324B65A2B89EB723FB32E7F3" Directory="INSTALLFOLDER" Guid="973BEBDA-E514-4DEB-BC87-79E1A60F4BF8" Win64="yes">
                 <File Id="fil857EC09AC99AFE55013ED23276EA7A26" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-convert-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpDD9A8434CB4A6317B4BA2A55410983F6" Directory="INSTALLFOLDER" Guid="F274C855-C438-47DC-A868-3472495A9802" Win64="yes">
+            <Component Id="cmpDD9A8434CB4A6317B4BA2A55410983F6" Directory="INSTALLFOLDER" Guid="49D9750B-1A97-4AFB-93DC-58D78AA56ADF" Win64="yes">
                 <File Id="fil05F92919DA01CD87C088B1B7CE3AF0D8" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-environment-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp11E56753706BD7FE87724F732A73F490" Directory="INSTALLFOLDER" Guid="8AD5E522-6ABA-4DA9-9F7C-FA71DFBC47A2" Win64="yes">
+            <Component Id="cmp11E56753706BD7FE87724F732A73F490" Directory="INSTALLFOLDER" Guid="06A71DF7-17DC-48DF-B897-9A09AE0BDE22" Win64="yes">
                 <File Id="fil7D01539A9AB967EA680352C503C6DC09" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-filesystem-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp8A47DE6FFCA0BA39168EFA51F2E3ECFF" Directory="INSTALLFOLDER" Guid="1765AE48-D54E-4F8F-8FCA-6627D2ECE43C" Win64="yes">
+            <Component Id="cmp8A47DE6FFCA0BA39168EFA51F2E3ECFF" Directory="INSTALLFOLDER" Guid="69EB0B0F-E3BE-4F32-8A86-4C103F0C6A67" Win64="yes">
                 <File Id="fil27C551710BEF5EC4BC328135EEBEA135" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-heap-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp4B8C11AC4FCB7CB42D55737034265B39" Directory="INSTALLFOLDER" Guid="55806E11-8BD6-4511-848A-B0F9786928AA" Win64="yes">
+            <Component Id="cmp4B8C11AC4FCB7CB42D55737034265B39" Directory="INSTALLFOLDER" Guid="1FE254CF-D4D2-48E8-9BCF-0C7E1C15D46E" Win64="yes">
                 <File Id="fil0B1F8BD818900489ED53DD592A535C47" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-locale-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp3E56BCDB6A50B4AA292F631457D3032D" Directory="INSTALLFOLDER" Guid="DD1FFE84-C630-4B0F-AA0D-4F77B6F7ABF9" Win64="yes">
+            <Component Id="cmp3E56BCDB6A50B4AA292F631457D3032D" Directory="INSTALLFOLDER" Guid="60D26DBA-8BED-4C94-8467-3B1D211F3F37" Win64="yes">
                 <File Id="fil2CF8DDC41ED2CCC246838458C09CB0E7" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-math-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp14FD53BFC562B74A90211F6A7FA45EF8" Directory="INSTALLFOLDER" Guid="E1337943-69BA-45D7-BC1A-D568FC53E340" Win64="yes">
+            <Component Id="cmp14FD53BFC562B74A90211F6A7FA45EF8" Directory="INSTALLFOLDER" Guid="60894C85-27BE-4828-8CD1-4BD18027F115" Win64="yes">
                 <File Id="filFB0713470FD14BAAA182341CB19AF7EF" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-process-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp8C8DF6C3F20B60706F1C2D2317BA7664" Directory="INSTALLFOLDER" Guid="28E506D0-D336-470F-8DDA-42A6B14A8E3F" Win64="yes">
+            <Component Id="cmp8C8DF6C3F20B60706F1C2D2317BA7664" Directory="INSTALLFOLDER" Guid="F454F86F-7F07-4091-8B3A-92E8CEF4C9DF" Win64="yes">
                 <File Id="fil7C86F69C29F28D20530B0BCAF69E9FB9" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-runtime-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpFE2451868FE2A2D25EE3375499109233" Directory="INSTALLFOLDER" Guid="23401E9B-C6A5-4BF6-84DA-F458507BEE3E" Win64="yes">
+            <Component Id="cmpFE2451868FE2A2D25EE3375499109233" Directory="INSTALLFOLDER" Guid="FD5E5FD8-72C5-4687-904C-C7C95705553C" Win64="yes">
                 <File Id="fil1CA9B8B8CFB836B270D48565EC302DA5" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-stdio-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpE0DBCBD210EEB84B2FE546162F07C376" Directory="INSTALLFOLDER" Guid="800E8AB3-EEAB-4489-8EB4-14FBEDD4FC27" Win64="yes">
+            <Component Id="cmpE0DBCBD210EEB84B2FE546162F07C376" Directory="INSTALLFOLDER" Guid="6FBD9F55-6C57-403E-93CE-8A62F7786445" Win64="yes">
                 <File Id="fil756422CB95AC98A122B628535E348CFD" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-string-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpD01CA70C06D9ADCC4F49058182448367" Directory="INSTALLFOLDER" Guid="50BE234D-862A-4D6A-B566-A3F1B979DAE6" Win64="yes">
+            <Component Id="cmpD01CA70C06D9ADCC4F49058182448367" Directory="INSTALLFOLDER" Guid="EBAAE133-731F-4E5B-8D30-44CC97BF993C" Win64="yes">
                 <File Id="filBA529A8BD882A2CAE02E14EEA7B22ADF" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-time-l1-1-0.dll" />
             </Component>
-            <Component Id="cmp21CF0447C915302F93234E31801A67A7" Directory="INSTALLFOLDER" Guid="9E892159-FDE2-4BB2-A01C-AA2541C0ED15" Win64="yes">
+            <Component Id="cmp21CF0447C915302F93234E31801A67A7" Directory="INSTALLFOLDER" Guid="6ED4AE56-FF63-49CA-92A0-E675D6E5EC8E" Win64="yes">
                 <File Id="fil76FEC3CFC3B4E7E1F7410458BFA45411" KeyPath="yes" Source=".\dist\App\api-ms-win-crt-utility-l1-1-0.dll" />
             </Component>
-            <Component Id="cmpAEEB5E01F7807A020F9811A22F39509E" Directory="INSTALLFOLDER" Guid="104EA3AE-759D-4AE1-9514-827FC799E7C2" Win64="yes">
+            <Component Id="cmpAEEB5E01F7807A020F9811A22F39509E" Directory="INSTALLFOLDER" Guid="AA902723-E3B4-43C5-9A85-4D90D6540D26" Win64="yes">
                 <File Id="fil307257BB1E9323EE5E10CFE1987EA99B" KeyPath="yes" Source=".\dist\App\base_library.zip" />
             </Component>
-            <Component Id="cmp41DC9741013CA4AD62A4A5FF421F08BC" Directory="INSTALLFOLDER" Guid="9C9217D2-283E-46A0-B816-F88C51012D8D" Win64="yes">
+            <Component Id="cmp41DC9741013CA4AD62A4A5FF421F08BC" Directory="INSTALLFOLDER" Guid="FDAB64C7-0935-462A-BE74-5A5BEF9B7382" Win64="yes">
                 <File Id="fil84B847A9F8DABE6B95AF875695C9E6D1" KeyPath="yes" Source=".\dist\App\d3dcompiler_47.dll" />
             </Component>
-            <Component Id="cmp363F691415DD37B081CFC985FD89E1ED" Directory="INSTALLFOLDER" Guid="C17005A4-EE5C-4CB7-83DE-626A9AE390D1" Win64="yes">
+            <Component Id="cmp363F691415DD37B081CFC985FD89E1ED" Directory="INSTALLFOLDER" Guid="4EBDA6BB-53F7-4414-8237-43A6B2AF41DC" Win64="yes">
                 <File Id="filE4A8517FAA43FB8132ED89D5B5EB797C" KeyPath="yes" Source=".\dist\App\libEGL.dll" />
             </Component>
-            <Component Id="cmp8A64E7CE3EE5BD2D11823B3C59FDDE7C" Directory="INSTALLFOLDER" Guid="18ADA534-AB78-4978-B766-5F79F9254DC7" Win64="yes">
+            <Component Id="cmp8A64E7CE3EE5BD2D11823B3C59FDDE7C" Directory="INSTALLFOLDER" Guid="CC1E3A92-8319-43EC-A739-D1209DF23600" Win64="yes">
                 <File Id="fil65C8C2AF07D3CA4AE7D7A2844A4D914E" KeyPath="yes" Source=".\dist\App\libGLESv2.dll" />
             </Component>
-            <Component Id="cmp22BDBF6A576A2F08B5D830A70A489172" Directory="INSTALLFOLDER" Guid="55B01F4A-69DF-4D01-A376-A6C8D0D28CCA" Win64="yes">
-                <File Id="fil5424A505228989B89EEE7945769BB03F" KeyPath="yes" Source=".\dist\App\libopenblas.NOIJJG62EMASZI6NYURL6JBKM4EVBGM7.gfortran-win_amd64.dll" />
-            </Component>
-            <Component Id="cmp93A7A6E61D35FC0F827D3E524165401B" Directory="INSTALLFOLDER" Guid="28A1A117-601F-4A8C-B700-E8DB5446622A" Win64="yes">
+            <Component Id="cmp93A7A6E61D35FC0F827D3E524165401B" Directory="INSTALLFOLDER" Guid="B99DC929-DE21-4281-9992-42C0E977E815" Win64="yes">
                 <File Id="fil42930A913984927C5FEB3213FBD9C01E" KeyPath="yes" Source=".\dist\App\MSVCP140.dll" />
             </Component>
-            <Component Id="cmp822E31B57976358947E0870F2D73BCB5" Directory="INSTALLFOLDER" Guid="6DF757EE-01CD-43DE-B9CE-6F669C8180DC" Win64="yes">
+            <Component Id="cmp822E31B57976358947E0870F2D73BCB5" Directory="INSTALLFOLDER" Guid="7395A2D3-C273-403D-A68D-9B8F7A491EE7" Win64="yes">
                 <File Id="filB8A00B3209C9AB094CC45E5E8F5B2C33" KeyPath="yes" Source=".\dist\App\MSVCP140_1.dll" />
             </Component>
-            <Component Id="cmp316B7EADCCFA5F980015637E294FFC4B" Directory="INSTALLFOLDER" Guid="C3551BF0-B18B-4D2D-B61F-E5301AA97835" Win64="yes">
+            <Component Id="cmp316B7EADCCFA5F980015637E294FFC4B" Directory="INSTALLFOLDER" Guid="3AF41939-1430-4A2D-BD67-3B35EBFE4FA8" Win64="yes">
                 <File Id="fil07CE2ABE9F28D446757A019F07E1898F" KeyPath="yes" Source=".\dist\App\opengl32sw.dll" />
             </Component>
-            <Component Id="cmp1DDC7A17986E4087470D7DAE06E174F9" Directory="INSTALLFOLDER" Guid="892B8EAC-C975-4CD8-80D3-6D8C96A14B09" Win64="yes">
+            <Component Id="cmp1DDC7A17986E4087470D7DAE06E174F9" Directory="INSTALLFOLDER" Guid="6513E219-B506-411C-A220-AE6A9F75E52D" Win64="yes">
                 <File Id="fil39BC980BAE46B771F5383C352E6E9A62" KeyPath="yes" Source=".\dist\App\pyexpat.pyd" />
             </Component>
-            <Component Id="cmpF6807864B8C33B25757F3DADEFD4A488" Directory="INSTALLFOLDER" Guid="DE6EA315-19F0-43F3-88C6-D10515A7E842" Win64="yes">
+            <Component Id="cmpF6807864B8C33B25757F3DADEFD4A488" Directory="INSTALLFOLDER" Guid="41A15AC6-B85D-4668-8EB1-A496523DE510" Win64="yes">
                 <File Id="fil0852BACEFA868A23B67C46559562958A" KeyPath="yes" Source=".\dist\App\python3.dll" />
             </Component>
-            <Component Id="cmp54909DA78C51764F93199F1EB9541035" Directory="INSTALLFOLDER" Guid="D537C369-9C5F-4E8C-8290-04DA0BE33922" Win64="yes">
+            <Component Id="cmp54909DA78C51764F93199F1EB9541035" Directory="INSTALLFOLDER" Guid="99253711-3341-43AE-8F45-76915D840140" Win64="yes">
                 <File Id="fil964DFC8758CA8C62A6B49DDEBE9B3D77" KeyPath="yes" Source=".\dist\App\python36.dll" />
             </Component>
-            <Component Id="cmp31149127A8D559E47A8412500CDB93C1" Directory="INSTALLFOLDER" Guid="DA9CE7D2-64E1-48CC-A0C1-70A36083032F" Win64="yes">
+            <Component Id="cmp31149127A8D559E47A8412500CDB93C1" Directory="INSTALLFOLDER" Guid="CCD80E9B-4576-43DF-9C95-F1DB6086AAC0" Win64="yes">
                 <File Id="fil388A71944B6369AB5D5428137DFB5520" KeyPath="yes" Source=".\dist\App\Qt5Core.dll" />
             </Component>
-            <Component Id="cmpAF035A16B3F49798D4267F94EEAF7BF8" Directory="INSTALLFOLDER" Guid="6DF993C0-9CC7-4B4D-ABF2-58AB9D2010A6" Win64="yes">
+            <Component Id="cmpAF035A16B3F49798D4267F94EEAF7BF8" Directory="INSTALLFOLDER" Guid="1178BE75-D2F4-496A-8DF1-2CB589805B7F" Win64="yes">
                 <File Id="fil2C5F4916A68E4AAD25FF32ED11A52C4D" KeyPath="yes" Source=".\dist\App\Qt5DBus.dll" />
             </Component>
-            <Component Id="cmpD4E52BD163861D1696633E739938CAB2" Directory="INSTALLFOLDER" Guid="A6122172-96AF-4C23-9F32-B2B086B52039" Win64="yes">
+            <Component Id="cmpD4E52BD163861D1696633E739938CAB2" Directory="INSTALLFOLDER" Guid="AD5CD647-C574-44C9-B359-BEFE05B99C1D" Win64="yes">
                 <File Id="fil9A5E6DFFEBA29C9841B357D815ED5661" KeyPath="yes" Source=".\dist\App\Qt5Gui.dll" />
             </Component>
-            <Component Id="cmpCBE98F9FD89C8F118FBAA62F96FAD058" Directory="INSTALLFOLDER" Guid="B5A15A42-9A00-467C-B071-67577C606372" Win64="yes">
+            <Component Id="cmpCBE98F9FD89C8F118FBAA62F96FAD058" Directory="INSTALLFOLDER" Guid="E478AEAC-5B56-45DF-82ED-C6D4BD19DC66" Win64="yes">
                 <File Id="filA8DBE181741601EDA88DDD2DF88922FF" KeyPath="yes" Source=".\dist\App\Qt5Network.dll" />
             </Component>
-            <Component Id="cmpD88D50645CEEC7E0EEAAF33C365EE9CC" Directory="INSTALLFOLDER" Guid="85E6CDEB-CD01-460A-AEDE-D8B9E0E8AF65" Win64="yes">
+            <Component Id="cmpD88D50645CEEC7E0EEAAF33C365EE9CC" Directory="INSTALLFOLDER" Guid="7B4285F0-10F8-4F12-8C1E-86593CE62B89" Win64="yes">
                 <File Id="filB46539D52C976046A6901918C6C5A5DD" KeyPath="yes" Source=".\dist\App\Qt5Qml.dll" />
             </Component>
-            <Component Id="cmp8CDC3701022EED2933DBCFC472EFA7B6" Directory="INSTALLFOLDER" Guid="E54B8FF7-D6BA-40E9-90A0-DA7D6FABE72E" Win64="yes">
+            <Component Id="cmp8CDC3701022EED2933DBCFC472EFA7B6" Directory="INSTALLFOLDER" Guid="AF156952-A224-4BBD-97F3-03E4919E2E78" Win64="yes">
                 <File Id="filA23735A856DE3686B5EE83D070727F3F" KeyPath="yes" Source=".\dist\App\Qt5QmlModels.dll" />
             </Component>
-            <Component Id="cmpD7C4174900152FDB7067354F762787CB" Directory="INSTALLFOLDER" Guid="F4860629-5D8D-4C3C-9388-9FDF5093888D" Win64="yes">
+            <Component Id="cmpD7C4174900152FDB7067354F762787CB" Directory="INSTALLFOLDER" Guid="CB2D4C08-9EFE-4E39-B359-2ED3D16F497B" Win64="yes">
                 <File Id="fil01EFAE549CBFD7F63CE42DAB660ADAC1" KeyPath="yes" Source=".\dist\App\Qt5Quick.dll" />
             </Component>
-            <Component Id="cmpAE841C8195F43246787C9E4E5D217176" Directory="INSTALLFOLDER" Guid="089E7475-DBB5-409A-83C2-AD7271FCEFFC" Win64="yes">
+            <Component Id="cmpAE841C8195F43246787C9E4E5D217176" Directory="INSTALLFOLDER" Guid="588FC5E8-C729-4539-B99E-73A155289C4B" Win64="yes">
                 <File Id="fil41B3C4D018B27DB945274E6CF9EDA0F7" KeyPath="yes" Source=".\dist\App\Qt5Svg.dll" />
             </Component>
-            <Component Id="cmp9EA1C790DFB4C02D583251EFB0BF3DB1" Directory="INSTALLFOLDER" Guid="280D54A1-5B72-488C-BCF0-417053C6D721" Win64="yes">
+            <Component Id="cmp9EA1C790DFB4C02D583251EFB0BF3DB1" Directory="INSTALLFOLDER" Guid="3B37FB27-63D3-42BA-BECB-799ACDC3BED2" Win64="yes">
                 <File Id="filEDF7F8A6FE95320A9E9292E47D2C8967" KeyPath="yes" Source=".\dist\App\Qt5WebSockets.dll" />
             </Component>
-            <Component Id="cmpFDF139B06EE6566BF84B5869FC85B426" Directory="INSTALLFOLDER" Guid="4D5D9DC3-F936-4A02-9118-C615E2D667A4" Win64="yes">
+            <Component Id="cmpFDF139B06EE6566BF84B5869FC85B426" Directory="INSTALLFOLDER" Guid="AFAC84EE-4241-4BA1-BC19-F5E11E207401" Win64="yes">
                 <File Id="filB90F43F2D685AA4EB9010FB81C1EF27C" KeyPath="yes" Source=".\dist\App\Qt5Widgets.dll" />
             </Component>
-            <Component Id="cmpEA85DF8E84CD8A6B076858A2C6812805" Directory="INSTALLFOLDER" Guid="FE7A4047-10F3-41AA-9CA8-756C7F33F934" Win64="yes">
+            <Component Id="cmpEA85DF8E84CD8A6B076858A2C6812805" Directory="INSTALLFOLDER" Guid="D4933F7E-E8F7-4E3F-8037-9ED0AAAC58D8" Win64="yes">
                 <File Id="filD2547DDFEB7189D65D01B726ECB939C2" KeyPath="yes" Source=".\dist\App\Qt5Xml.dll" />
             </Component>
-            <Component Id="cmp59DE963F574E473958E76ABF8F6B0542" Directory="INSTALLFOLDER" Guid="89B004D9-C802-47B1-B9AB-35A2EB72F96B" Win64="yes">
+            <Component Id="cmp59DE963F574E473958E76ABF8F6B0542" Directory="INSTALLFOLDER" Guid="70B13479-92B5-4371-B671-159344531DAF" Win64="yes">
                 <File Id="filEA82D0CA12096BB7BBD3C68E93AEC9FD" KeyPath="yes" Source=".\dist\App\select.pyd" />
             </Component>
-            <Component Id="cmp01000D74F559983AC9750C3E87771662" Directory="INSTALLFOLDER" Guid="C3DD864C-A35A-4642-90A1-482E1A1C0D9C" Win64="yes">
+            <Component Id="cmp01000D74F559983AC9750C3E87771662" Directory="INSTALLFOLDER" Guid="667E5705-5A51-4D78-BAE1-207F4C566DC4" Win64="yes">
                 <File Id="fil170F5D00550326081B94D3FD54AB9440" KeyPath="yes" Source=".\dist\App\sqlite3.dll" />
             </Component>
-            <Component Id="cmp991DE60E5D7D2BF847D958C2FAAE1BE6" Directory="INSTALLFOLDER" Guid="D618AF22-9944-443B-8A02-BF230C68C8A4" Win64="yes">
+            <Component Id="cmp991DE60E5D7D2BF847D958C2FAAE1BE6" Directory="INSTALLFOLDER" Guid="DABD96E3-445B-4394-89D6-F19B6C5FB189" Win64="yes">
                 <File Id="fil757519042086F17FCF91B4887D071386" KeyPath="yes" Source=".\dist\App\TinyPID.exe" />
             </Component>
-            <Component Id="cmpBB7C114FA441D081C1234DFC3173592C" Directory="INSTALLFOLDER" Guid="BB1D7AF2-BF59-4DA9-A065-4E9FE5D5EB5F" Win64="yes">
+            <Component Id="cmpBB7C114FA441D081C1234DFC3173592C" Directory="INSTALLFOLDER" Guid="A6ECAAF8-B94E-417A-B7FE-9302CFA18899" Win64="yes">
                 <File Id="fil679B7DFAE26F900088029DE34B956905" KeyPath="yes" Source=".\dist\App\TinyPID.exe.manifest" />
             </Component>
-            <Component Id="cmpB67698E8021557AB8B9CC56808EA4FD2" Directory="INSTALLFOLDER" Guid="A2EA14C9-B998-4ADC-A740-037B076F4BA6" Win64="yes">
+            <Component Id="cmpB67698E8021557AB8B9CC56808EA4FD2" Directory="INSTALLFOLDER" Guid="BE102A96-CAF7-42CC-9131-5B9A736A7D7A" Win64="yes">
                 <File Id="fil4632E4BAE83C5DDA6408E46C4A1F0259" KeyPath="yes" Source=".\dist\App\ucrtbase.dll" />
             </Component>
-            <Component Id="cmp129B47468B9748E89F50718E887CC4B8" Directory="INSTALLFOLDER" Guid="EF783079-EFF5-4506-AFD1-1AD53E649188" Win64="yes">
+            <Component Id="cmp129B47468B9748E89F50718E887CC4B8" Directory="INSTALLFOLDER" Guid="95B07F1A-647B-4232-8BE6-110D4106835E" Win64="yes">
                 <File Id="fil2BE93E8E8D521569240164A20F72EA13" KeyPath="yes" Source=".\dist\App\unicodedata.pyd" />
             </Component>
-            <Component Id="cmp00D8B010B57B750B070AB49661279BA8" Directory="INSTALLFOLDER" Guid="C5239D27-A087-4365-85FB-D09869F50461" Win64="yes">
+            <Component Id="cmp00D8B010B57B750B070AB49661279BA8" Directory="INSTALLFOLDER" Guid="E09C1EFC-E658-495F-A9E6-5D8FE292FE5A" Win64="yes">
                 <File Id="filA210381EFFD8DE87311FCE8AE9560BE4" KeyPath="yes" Source=".\dist\App\VCRUNTIME140.dll" />
             </Component>
-            <Component Id="cmp7480591276FDF8C0AD744AB01E674037" Directory="INSTALLFOLDER" Guid="C962C992-64F1-40DE-86E1-0F3FA43D3A64" Win64="yes">
+            <Component Id="cmp7480591276FDF8C0AD744AB01E674037" Directory="INSTALLFOLDER" Guid="06B07716-F81C-46F8-B42B-729EC26EFE31" Win64="yes">
                 <File Id="fil8549C740AF48489049F0EA991DBDA6E9" KeyPath="yes" Source=".\dist\App\VCRUNTIME140_1.dll" />
             </Component>
-            <Component Id="cmpA98BB018E622A50E2F7A2028B7A9D149" Directory="INSTALLFOLDER" Guid="5D691E9C-1932-4F62-8A31-F749036EBAED" Win64="yes">
+            <Component Id="cmpA98BB018E622A50E2F7A2028B7A9D149" Directory="INSTALLFOLDER" Guid="F05D2CAD-F379-4992-B3B1-6D0DD95D844B" Win64="yes">
                 <File Id="fil5F59787FCB47C7E20BE70CD0CCDBB55E" KeyPath="yes" Source=".\dist\App\_asyncio.pyd" />
             </Component>
-            <Component Id="cmpD94008E9D03C54DEA23D56F5D70EE39E" Directory="INSTALLFOLDER" Guid="F7C874DE-905B-48B8-8F77-59FA0950A40E" Win64="yes">
+            <Component Id="cmpD94008E9D03C54DEA23D56F5D70EE39E" Directory="INSTALLFOLDER" Guid="7D70E646-F2F1-4D71-A212-9B78BE139122" Win64="yes">
                 <File Id="filC914777247BB0C91F9F602D152ECC882" KeyPath="yes" Source=".\dist\App\_bz2.pyd" />
             </Component>
-            <Component Id="cmp919310159469D4666B08D62383DBE6E4" Directory="INSTALLFOLDER" Guid="17C34CE9-A916-4401-B2EE-F0507CEA93DE" Win64="yes">
+            <Component Id="cmp919310159469D4666B08D62383DBE6E4" Directory="INSTALLFOLDER" Guid="012894F9-CB63-418F-9469-0D17CE7394CB" Win64="yes">
                 <File Id="fil037725B7CEDC947F4EA9E8D91E9A5F34" KeyPath="yes" Source=".\dist\App\_ctypes.pyd" />
             </Component>
-            <Component Id="cmpC7EB3B84C1CA1468B5A8E8271DC5B409" Directory="INSTALLFOLDER" Guid="B3E02C12-7E88-4691-BF83-382430B28465" Win64="yes">
+            <Component Id="cmpC7EB3B84C1CA1468B5A8E8271DC5B409" Directory="INSTALLFOLDER" Guid="02110434-0370-42A1-B08A-0E62C6FBA7AA" Win64="yes">
                 <File Id="fil09658413993C6ECB4011FF79D07A898C" KeyPath="yes" Source=".\dist\App\_decimal.pyd" />
             </Component>
-            <Component Id="cmp511C6311C20F18BD79495FE8B094D248" Directory="INSTALLFOLDER" Guid="820E56DF-C7D5-4612-A021-DB8E3F0C3DF5" Win64="yes">
-                <File Id="filD5D4EA08D04666C2BEC1BB3059837B21" KeyPath="yes" Source=".\dist\App\_distutils_findvs.pyd" />
-            </Component>
-            <Component Id="cmp631053F8B23C9329966A572B12225D44" Directory="INSTALLFOLDER" Guid="1557BBAB-29F3-446E-A2E6-34548BB77EBF" Win64="yes">
+            <Component Id="cmp631053F8B23C9329966A572B12225D44" Directory="INSTALLFOLDER" Guid="3E0FADEA-6FF3-4813-A0FE-B1FF3A60384D" Win64="yes">
                 <File Id="filB0ABFBBC40E87E3A2129453C44435761" KeyPath="yes" Source=".\dist\App\_elementtree.pyd" />
             </Component>
-            <Component Id="cmp2B14B30CA2CBDED56C6CD64C514933A6" Directory="INSTALLFOLDER" Guid="ED0735FA-C6A6-4AE5-85ED-383697A83228" Win64="yes">
+            <Component Id="cmp2B14B30CA2CBDED56C6CD64C514933A6" Directory="INSTALLFOLDER" Guid="90B8280C-A6CF-41E0-91DA-28E2AD84EC32" Win64="yes">
                 <File Id="fil3DEF234D756BADEF7ACAD03F54569EF2" KeyPath="yes" Source=".\dist\App\_hashlib.pyd" />
             </Component>
-            <Component Id="cmpB72FA74A6CE9681CA191F2D04708C8F6" Directory="INSTALLFOLDER" Guid="8979AA8B-81DB-4BBA-AC66-C77E2C84C1EB" Win64="yes">
+            <Component Id="cmpB72FA74A6CE9681CA191F2D04708C8F6" Directory="INSTALLFOLDER" Guid="B985D0DB-C377-45C7-A071-2A7ACE68575D" Win64="yes">
                 <File Id="fil8727F072CD5AFEDB6D84CC217DB50470" KeyPath="yes" Source=".\dist\App\_lzma.pyd" />
             </Component>
-            <Component Id="cmp3B80D36C432B0EE1B8E2881619933E7A" Directory="INSTALLFOLDER" Guid="4A89CC6D-C63B-4A62-A0B1-4426CFA30606" Win64="yes">
+            <Component Id="cmp3B80D36C432B0EE1B8E2881619933E7A" Directory="INSTALLFOLDER" Guid="912D87CA-0BFA-4C4C-B60E-A24C8FF17C2F" Win64="yes">
                 <File Id="fil35E32CCCE77E1A03F2B258ABE3B943DF" KeyPath="yes" Source=".\dist\App\_multiprocessing.pyd" />
             </Component>
-            <Component Id="cmpC8325E0184D470226E9CE588833EBC8D" Directory="INSTALLFOLDER" Guid="EA9A625E-66DC-45FB-A904-A8E6A8308F81" Win64="yes">
+            <Component Id="cmpC8325E0184D470226E9CE588833EBC8D" Directory="INSTALLFOLDER" Guid="E99FDA90-ECFA-44DB-B208-B75BD71E3FD8" Win64="yes">
                 <File Id="fil7432681225FE08ACC638CF2720337428" KeyPath="yes" Source=".\dist\App\_overlapped.pyd" />
             </Component>
-            <Component Id="cmpF0F801A0ADFF20646C32E46088585917" Directory="INSTALLFOLDER" Guid="18C54392-72EE-43A2-8E1B-4E515CCF1CAF" Win64="yes">
+            <Component Id="cmpF0F801A0ADFF20646C32E46088585917" Directory="INSTALLFOLDER" Guid="65268EDC-BFBA-4A60-8A12-3F0A309DF5A8" Win64="yes">
                 <File Id="fil96CB1FAC08EC1FE6A7EE8EB2D23D49D8" KeyPath="yes" Source=".\dist\App\_socket.pyd" />
             </Component>
-            <Component Id="cmp8EC8FEF4B7FD65ACC1F2699516128FA6" Directory="INSTALLFOLDER" Guid="53FD307F-1576-4953-BE81-E3A865D1773A" Win64="yes">
+            <Component Id="cmp8EC8FEF4B7FD65ACC1F2699516128FA6" Directory="INSTALLFOLDER" Guid="5E1F86C6-26FF-4A8C-8C59-ACAE315A1A08" Win64="yes">
                 <File Id="filBF195BC0CEAC516A28F36EBECF49A7B9" KeyPath="yes" Source=".\dist\App\_sqlite3.pyd" />
             </Component>
-            <Component Id="cmp424F0C849BE741F7F9E3956E948B40D5" Directory="INSTALLFOLDER" Guid="5EC8373A-69D2-4C9B-BBC5-8BA6D2951814" Win64="yes">
+            <Component Id="cmp424F0C849BE741F7F9E3956E948B40D5" Directory="INSTALLFOLDER" Guid="7DC1C1F0-9979-4E38-B9DA-92FD05AC0635" Win64="yes">
                 <File Id="fil0EA11FB1558CD82995B581A8873543AA" KeyPath="yes" Source=".\dist\App\_ssl.pyd" />
             </Component>
-            <Component Id="cmpF2E97AA4F0110C70278F3B36F9735751" Directory="dir57BB962486B55B28FC45B65CCD902110" Guid="C9CA34EE-65E2-4EE4-A871-22A5BFFF53FA" Win64="yes">
-                <File Id="fil8BD228FBCD95B077F16C6F2201BA1D59" KeyPath="yes" Source=".\dist\App\cv2\cv2.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmp11820B2A88C9B24BB9742E7C533C3CBD" Directory="dir4A75851B3F11AB4A6A14A144CF144CDE" Guid="8F19963A-184A-45C5-82A4-91643012358E" Win64="yes">
+            <Component Id="cmp11820B2A88C9B24BB9742E7C533C3CBD" Directory="dir4A75851B3F11AB4A6A14A144CF144CDE" Guid="ACBAF727-69AB-475F-8978-95B577A2CC9D" Win64="yes">
                 <File Id="fil90A6F6288CAC985C34C6F8F5EA2B8D27" KeyPath="yes" Source=".\dist\App\Include\pyconfig.h" />
             </Component>
-            <Component Id="cmp624142961AE66F87C145B34EB4CDC946" Directory="dir06F962092CAFAD736E2E47442677063D" Guid="53917CF7-9CFB-4778-A948-3C28AC050C84" Win64="yes">
-                <File Id="fil7AA8D29B4428A0828D88D8AD8462A53A" KeyPath="yes" Source=".\dist\App\lib2to3\Grammar.txt" />
-            </Component>
-            <Component Id="cmp8F1F46EC4A7D441BE1B35063C86E2D5E" Directory="dir06F962092CAFAD736E2E47442677063D" Guid="CC605481-1396-4746-A593-6FE91463C394" Win64="yes">
-                <File Id="fil66E32D42399275D4AFA859D87CE5E830" KeyPath="yes" Source=".\dist\App\lib2to3\Grammar3.6.6.final.0.pickle" />
-            </Component>
-            <Component Id="cmp7A78B1E7E4076F6FE8B9E465130A3B61" Directory="dir06F962092CAFAD736E2E47442677063D" Guid="2757C5FE-2996-4B9D-A215-F68DAB63BD21" Win64="yes">
-                <File Id="fil26FA056A198E5DD7847DCD912CCBAF39" KeyPath="yes" Source=".\dist\App\lib2to3\PatternGrammar.txt" />
-            </Component>
-            <Component Id="cmp0B64E6498E84DD0D3467E42A7EF25818" Directory="dir06F962092CAFAD736E2E47442677063D" Guid="DF67BC0B-E9E8-4FF4-B8ED-23B6EA5DD3B7" Win64="yes">
-                <File Id="fil8697F5B845250BFFF214189C1025F08A" KeyPath="yes" Source=".\dist\App\lib2to3\PatternGrammar3.6.6.final.0.pickle" />
-            </Component>
-            <Component Id="cmp788C22369B459D59C7875BB63F95F482" Directory="dir736CDDA7EDAF746EA439549D60950551" Guid="174A14B7-123E-4AC7-B050-82D56C1E9C68" Win64="yes">
-                <File Id="fil6B0BB4BA04536DA8C91298442714A36C" KeyPath="yes" Source=".\dist\App\lib2to3\tests\data\README" />
-            </Component>
-            <Component Id="cmpC7FA09E324D350A6D9164F7A67FE66A0" Directory="dir03FFB8A30B6FAE1278F1BC2593CD3D76" Guid="8FB1292C-B01D-486F-9897-5F353D521845" Win64="yes">
-                <File Id="fil247A934EBB61C19298D034394E864121" KeyPath="yes" Source=".\dist\App\numpy\core\_multiarray_tests.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmp2C725C4767E5E56B8B4310B732AA8F6C" Directory="dir03FFB8A30B6FAE1278F1BC2593CD3D76" Guid="AEE7F3D7-FC5D-4516-886E-07654F09373E" Win64="yes">
-                <File Id="fil1A2E7EBFE079A9CA7A15EEF8C81CA4C1" KeyPath="yes" Source=".\dist\App\numpy\core\_multiarray_umath.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmp7D40FB3BB03901E29B4DADC34B8BEB94" Directory="dir1A0615162D20AB2C84016F5954C6E22B" Guid="381C9613-EE96-428F-88CD-C308433C7AED" Win64="yes">
-                <File Id="filDF0BD803BAE582B85EC0563DDDFA6ED7" KeyPath="yes" Source=".\dist\App\numpy\fft\_pocketfft_internal.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmp34F88FAEAB23EB4EF4C3F797D47DB50B" Directory="dir5B7E6D2285D1DD45A3DE50429742BEFC" Guid="AE2A7944-7027-4002-86F3-B97CF59034E4" Win64="yes">
-                <File Id="filF722A51513CF9943B41FEC374D5FA677" KeyPath="yes" Source=".\dist\App\numpy\linalg\lapack_lite.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmp461DA6D09089F78A4E2A6EE677F268B1" Directory="dir5B7E6D2285D1DD45A3DE50429742BEFC" Guid="D8442927-E784-42FB-8528-48CA842F3655" Win64="yes">
-                <File Id="fil15580C494ECD372F696B51A2B37C999D" KeyPath="yes" Source=".\dist\App\numpy\linalg\_umath_linalg.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmp4D762ED31B4409FAD0DD44C9AC602304" Directory="dir9385CC6B178D3CCE8B89B8C7D212E9D7" Guid="F9002661-6CBF-4BB7-8FEA-EADD9DD5061B" Win64="yes">
-                <File Id="fil39986AFDE084EC5EA180CB007610A57B" KeyPath="yes" Source=".\dist\App\numpy\random\bit_generator.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmpA34F3EC2182C74BB3C496AFDE53D0B8F" Directory="dir9385CC6B178D3CCE8B89B8C7D212E9D7" Guid="17DBBE9F-A430-4018-B46A-4501C9F028EF" Win64="yes">
-                <File Id="fil559B3077FF7132ECA89D88AE0E47BB41" KeyPath="yes" Source=".\dist\App\numpy\random\mtrand.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmpA6CA96628829212843AD3ECE5C006F4B" Directory="dir9385CC6B178D3CCE8B89B8C7D212E9D7" Guid="45747413-E11E-4DEB-996A-4F9384186B00" Win64="yes">
-                <File Id="fil23C54CA64108E1B9CA2C05066D06BE26" KeyPath="yes" Source=".\dist\App\numpy\random\_bounded_integers.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmp477BE12A35831BD792754119744724A3" Directory="dir9385CC6B178D3CCE8B89B8C7D212E9D7" Guid="F051B65C-1BF9-43DF-AC4C-179ABE890B90" Win64="yes">
-                <File Id="fil563ADAB047B7F235B27B6EE49EDE3C02" KeyPath="yes" Source=".\dist\App\numpy\random\_common.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmp176F0946201DF17FD8688AA740C17588" Directory="dir9385CC6B178D3CCE8B89B8C7D212E9D7" Guid="89A78360-DA15-4CBF-A628-DCCC42F03A1B" Win64="yes">
-                <File Id="fil88DA25B838E6D2DD4B5DCC84F0E42140" KeyPath="yes" Source=".\dist\App\numpy\random\_generator.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmp1F488313519D86135CC109D7ED2F871F" Directory="dir9385CC6B178D3CCE8B89B8C7D212E9D7" Guid="A5BE2814-7540-4B09-9272-6A5D90690F92" Win64="yes">
-                <File Id="fil97E8E58812724A1866B79414B571FE67" KeyPath="yes" Source=".\dist\App\numpy\random\_mt19937.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmp37425B6CEC71EC98CCE2C3B7ABC9D38E" Directory="dir9385CC6B178D3CCE8B89B8C7D212E9D7" Guid="F7421F0F-2B50-46F1-86C4-A7CB8A01C474" Win64="yes">
-                <File Id="filC53E99C964714F5681E645C4672DFBAA" KeyPath="yes" Source=".\dist\App\numpy\random\_pcg64.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmp17A327572196DD6EF008ACBDA981099B" Directory="dir9385CC6B178D3CCE8B89B8C7D212E9D7" Guid="0A3E6989-4212-4BB7-873E-EA89E616254B" Win64="yes">
-                <File Id="fil29569990FA915D8EDC279DCBF0F21CAE" KeyPath="yes" Source=".\dist\App\numpy\random\_philox.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmpF7925867AF69AD09251835F08F1B4F36" Directory="dir9385CC6B178D3CCE8B89B8C7D212E9D7" Guid="84671A81-3E11-458C-A67E-003AE85CD04A" Win64="yes">
-                <File Id="filF24EF5CB7523E93F60CF75815666B1FC" KeyPath="yes" Source=".\dist\App\numpy\random\_sfc64.cp36-win_amd64.pyd" />
-            </Component>
-            <Component Id="cmp0592890CB2A3008ABF4FE9B7367CD6AC" Directory="dir0395578F1B049DC836212B0E8A74915E" Guid="1C4692EC-C655-4A3F-A0ED-C5440615C917" Win64="yes">
+            <Component Id="cmp0592890CB2A3008ABF4FE9B7367CD6AC" Directory="dir0395578F1B049DC836212B0E8A74915E" Guid="106D82A6-5C3C-483A-B0D1-22F779BC9579" Win64="yes">
                 <File Id="fil35EFA31C84429F30558CC7F88AA97397" KeyPath="yes" Source=".\dist\App\PyQt5\QtCore.pyd" />
             </Component>
-            <Component Id="cmpF1805E57972DC250BF8CAA0CFAA6EF1A" Directory="dir0395578F1B049DC836212B0E8A74915E" Guid="8D3CD298-34A1-4D40-A985-308DB0BE3948" Win64="yes">
+            <Component Id="cmpF1805E57972DC250BF8CAA0CFAA6EF1A" Directory="dir0395578F1B049DC836212B0E8A74915E" Guid="9CD9AC93-6D82-460F-90E3-4AA70060801E" Win64="yes">
                 <File Id="filEEADC5804E03D94F1DBAAFD9DA842B22" KeyPath="yes" Source=".\dist\App\PyQt5\QtGui.pyd" />
             </Component>
-            <Component Id="cmpB804F472AD3EE9C28D2C2A857E5B91E5" Directory="dir0395578F1B049DC836212B0E8A74915E" Guid="07A945DA-E229-4C46-B1EA-1BA619B9D158" Win64="yes">
+            <Component Id="cmpB804F472AD3EE9C28D2C2A857E5B91E5" Directory="dir0395578F1B049DC836212B0E8A74915E" Guid="5964623F-1B77-496E-9A1B-E2CBE18C7DA2" Win64="yes">
                 <File Id="fil6E9C5702B65F95A953DF583660A0B2D5" KeyPath="yes" Source=".\dist\App\PyQt5\QtSvg.pyd" />
             </Component>
-            <Component Id="cmpC953E860F756C4F31FD40605C5E70226" Directory="dir0395578F1B049DC836212B0E8A74915E" Guid="7F645292-94F2-456A-B8EA-410FF6946C65" Win64="yes">
+            <Component Id="cmpC953E860F756C4F31FD40605C5E70226" Directory="dir0395578F1B049DC836212B0E8A74915E" Guid="300DF4A4-92B1-40D0-85C8-0E5B55EAE9F0" Win64="yes">
                 <File Id="fil55A6F4894186AC44427E47DCD3465E93" KeyPath="yes" Source=".\dist\App\PyQt5\QtWidgets.pyd" />
             </Component>
-            <Component Id="cmp9ED475324DA589ADCA899517F49C260C" Directory="dir0395578F1B049DC836212B0E8A74915E" Guid="F3EDF44B-4286-46E5-87E3-F27F8DEDB612" Win64="yes">
+            <Component Id="cmp9ED475324DA589ADCA899517F49C260C" Directory="dir0395578F1B049DC836212B0E8A74915E" Guid="C31DFCB1-F25D-44FC-A693-BFF956EAA7DB" Win64="yes">
                 <File Id="fil09ACCDB38056FA6644998A9220540AD2" KeyPath="yes" Source=".\dist\App\PyQt5\QtXml.pyd" />
             </Component>
-            <Component Id="cmp5605A36A7D6C282B1FE1C7AB48BDCA05" Directory="dir0395578F1B049DC836212B0E8A74915E" Guid="F305F342-41FA-479A-8E42-FFB38230999B" Win64="yes">
+            <Component Id="cmp5605A36A7D6C282B1FE1C7AB48BDCA05" Directory="dir0395578F1B049DC836212B0E8A74915E" Guid="FE3CC60C-EACA-4CB4-8E7C-245BE1E407C0" Win64="yes">
                 <File Id="filDD1BC958763D485D00A5455E76718CFC" KeyPath="yes" Source=".\dist\App\PyQt5\sip.cp36-win_amd64.pyd" />
             </Component>
-            <Component Id="cmp04EAA49C1E8AEBEBB3995418B1EB3271" Directory="dirF14F277BC07DC53255A0BDF58742A2C6" Guid="49F7218E-91DD-4FB4-A0BB-482EF32EF162" Win64="yes">
+            <Component Id="cmp04EAA49C1E8AEBEBB3995418B1EB3271" Directory="dirF14F277BC07DC53255A0BDF58742A2C6" Guid="6FC30034-051F-4050-B659-F77CE5DA800E" Win64="yes">
                 <File Id="fil1FD30001B1674EF4A8B88D1DE66685E0" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\iconengines\qsvgicon.dll" />
             </Component>
-            <Component Id="cmp34BC6C3C60E46D55BF025E765D14CB03" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="9172C2D0-9B7A-46A5-BCEF-34766612565A" Win64="yes">
+            <Component Id="cmp34BC6C3C60E46D55BF025E765D14CB03" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="53DE9410-05FE-4290-9957-6C1A646ADE38" Win64="yes">
                 <File Id="filCF5938D85E64AC7BDB82CA8404E0BA85" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\imageformats\qgif.dll" />
             </Component>
-            <Component Id="cmpF0F804FC3C1F6B4AB5782C3E9A0BA6AE" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="0F2CEA52-6287-4AEF-AEF4-E8461D20932B" Win64="yes">
+            <Component Id="cmpF0F804FC3C1F6B4AB5782C3E9A0BA6AE" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="9AD81A7E-F274-48CB-89E6-B7BF229EA1D0" Win64="yes">
                 <File Id="fil5F913EA5FF7BD4F81BB21537660B8EFF" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\imageformats\qicns.dll" />
             </Component>
-            <Component Id="cmp4075DF52F316A20FD4DDC3BB71066ECA" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="97EFA71B-2DB9-44A8-A649-8BD3391DBAAE" Win64="yes">
+            <Component Id="cmp4075DF52F316A20FD4DDC3BB71066ECA" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="81DAB661-1F1B-4742-9465-0ECBD0417F4F" Win64="yes">
                 <File Id="fil8DB0D5325CDCB8E710980225B75CC1E8" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\imageformats\qico.dll" />
             </Component>
-            <Component Id="cmp71DDEE7F2EED933F971A3B9A7AB5C5E4" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="C4A8CEC1-BEE4-4DE1-978C-F168AE8A134D" Win64="yes">
+            <Component Id="cmp71DDEE7F2EED933F971A3B9A7AB5C5E4" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="E613F946-C10B-4D07-8C61-DF915405B90B" Win64="yes">
                 <File Id="filBACE15355BBF45B27D18B1F220A9D403" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\imageformats\qjpeg.dll" />
             </Component>
-            <Component Id="cmp5416C640ECF5B89283A8BB58F38D9794" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="F5CF441D-CF31-4496-AE4A-B5F2D1CD7A3A" Win64="yes">
+            <Component Id="cmp5416C640ECF5B89283A8BB58F38D9794" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="4FA28D7A-7C7B-4B57-899B-49723BBFE510" Win64="yes">
                 <File Id="fil6F9A011ED16880F4D11B1DE6E9D2F368" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\imageformats\qsvg.dll" />
             </Component>
-            <Component Id="cmp9A1249C4C93F739EFF4559FFD58E58DD" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="3184A0B6-8C18-4A01-8CA4-0F17B806D586" Win64="yes">
+            <Component Id="cmp9A1249C4C93F739EFF4559FFD58E58DD" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="005BFACC-7EE4-46E1-B0F0-EA709E5636A1" Win64="yes">
                 <File Id="fil19856AF4677D9D6CC0B2630F476C1355" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\imageformats\qtga.dll" />
             </Component>
-            <Component Id="cmp9717B6F45B55523993A97FA1247577C3" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="01B1AFE8-C781-4FCC-BB99-88C032C43EC7" Win64="yes">
+            <Component Id="cmp9717B6F45B55523993A97FA1247577C3" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="E1449467-5570-4840-8964-2BF15C4963E9" Win64="yes">
                 <File Id="filCCC240AAAE6384671FC2A822D5429787" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\imageformats\qtiff.dll" />
             </Component>
-            <Component Id="cmp95D53F90C48C46B5699F0DA366520A48" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="21126DF2-3D1D-40EB-B7BC-97CB2D8AE26B" Win64="yes">
+            <Component Id="cmp95D53F90C48C46B5699F0DA366520A48" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="7F69A288-18EE-4896-829A-727D4E693F5D" Win64="yes">
                 <File Id="fil369FF89049E2D1FE72FE1014E2E38287" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\imageformats\qwbmp.dll" />
             </Component>
-            <Component Id="cmp7AF50FD6FAECB8DA1AB37489D9F13060" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="6DF4C98B-5D86-4EA3-A943-CF9435AB7E31" Win64="yes">
+            <Component Id="cmp7AF50FD6FAECB8DA1AB37489D9F13060" Directory="dirF7DC2872BDD892A10055B37F3A69C5ED" Guid="136A6FED-2CEE-422E-9906-34CE1111EFF0" Win64="yes">
                 <File Id="filDFEA4A4917B6429F35A2473D6402A144" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\imageformats\qwebp.dll" />
             </Component>
-            <Component Id="cmp1218AA10A1889B3AF058AC831E3E58D3" Directory="dirAB5E7F71D7CD6BE1A6CAF93F3ECA7D07" Guid="1188F9BB-9674-410F-8905-2FE07261C801" Win64="yes">
+            <Component Id="cmp1218AA10A1889B3AF058AC831E3E58D3" Directory="dirAB5E7F71D7CD6BE1A6CAF93F3ECA7D07" Guid="F0F29796-31A5-457C-A366-31E627C257AA" Win64="yes">
                 <File Id="filBDC433F825EE65F1E9CCB09595CD8717" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\platforms\qminimal.dll" />
             </Component>
-            <Component Id="cmp375252157F400C7B2AA1CDF5B46BAF3E" Directory="dirAB5E7F71D7CD6BE1A6CAF93F3ECA7D07" Guid="B8CD73D6-BA35-4B0A-AF02-D09C72F8BAA0" Win64="yes">
+            <Component Id="cmp375252157F400C7B2AA1CDF5B46BAF3E" Directory="dirAB5E7F71D7CD6BE1A6CAF93F3ECA7D07" Guid="73C89CC6-108A-496B-B6ED-812ECF63B2A4" Win64="yes">
                 <File Id="fil5996C7E53D9DA56113F2D2A955F679A4" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\platforms\qoffscreen.dll" />
             </Component>
-            <Component Id="cmp8D1223411AFB938A32672EA43C7D4D68" Directory="dirAB5E7F71D7CD6BE1A6CAF93F3ECA7D07" Guid="CCBA1607-9069-48C2-B407-03DEA0C270FD" Win64="yes">
+            <Component Id="cmp8D1223411AFB938A32672EA43C7D4D68" Directory="dirAB5E7F71D7CD6BE1A6CAF93F3ECA7D07" Guid="C1C1369E-4D27-42E0-A853-97481AD3425F" Win64="yes">
                 <File Id="filD62DE223A6A35F062E3A9ABE5B6404D0" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\platforms\qwebgl.dll" />
             </Component>
-            <Component Id="cmp8025DD1331FB333DD8F3B57F7DA1CDE0" Directory="dirAB5E7F71D7CD6BE1A6CAF93F3ECA7D07" Guid="5243BAD3-D281-4589-84AE-558D4E8242CB" Win64="yes">
+            <Component Id="cmp8025DD1331FB333DD8F3B57F7DA1CDE0" Directory="dirAB5E7F71D7CD6BE1A6CAF93F3ECA7D07" Guid="3246C67A-9DB5-47CB-84C4-745BF201F637" Win64="yes">
                 <File Id="filA46E00E0F9391642E2BB8073CAB70B84" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\platforms\qwindows.dll" />
             </Component>
-            <Component Id="cmp2A57498162ED02ED9F11E4ED08776D0A" Directory="dir47E1267F9B45FEDC6FBA5AC6631D80CE" Guid="157A9DE0-FDDF-42D7-8B3A-D7AD7EAC2DDC" Win64="yes">
+            <Component Id="cmp2A57498162ED02ED9F11E4ED08776D0A" Directory="dir47E1267F9B45FEDC6FBA5AC6631D80CE" Guid="9F8AB333-5FAF-4897-A103-FE69B24E9692" Win64="yes">
                 <File Id="fil2F35BD57DEF688E8FBD75AA260302D1B" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\platformthemes\qxdgdesktopportal.dll" />
             </Component>
-            <Component Id="cmpFDCC2409B9E3FC5DCAC663D97CFB1CF6" Directory="dirAB97E2B27F74C723FBC0D156D4743212" Guid="3191D909-A80D-405A-A257-DA693FBB4EC8" Win64="yes">
+            <Component Id="cmpFDCC2409B9E3FC5DCAC663D97CFB1CF6" Directory="dirAB97E2B27F74C723FBC0D156D4743212" Guid="A6747392-299D-49C0-AE1B-9D9BF1C141AB" Win64="yes">
                 <File Id="fil044B4E6B91A32335B9AF084B58ADA1EB" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\plugins\styles\qwindowsvistastyle.dll" />
             </Component>
-            <Component Id="cmp61036504F2B99DF9B179EBE00115C155" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="B16DE3DA-B33C-41F4-87D1-A337E74DEE6F" Win64="yes">
+            <Component Id="cmp61036504F2B99DF9B179EBE00115C155" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="1F82C9E5-2E88-4ED6-8FF9-30A060AAB4E2" Win64="yes">
                 <File Id="fil23372F3F63E39A2BE53631A6FD454925" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_ar.qm" />
             </Component>
-            <Component Id="cmpBD68108B9DA6BCA5ACF715BACA67AB01" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="80E37B23-3548-4F8C-BB31-3BD49571AF93" Win64="yes">
+            <Component Id="cmpBD68108B9DA6BCA5ACF715BACA67AB01" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="37A25E2F-CF0F-4E01-87BD-5798FBC29CC4" Win64="yes">
                 <File Id="fil0176C46F3DDB0DA6FB5735A581EC1D4F" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_bg.qm" />
             </Component>
-            <Component Id="cmpC4E700608349CF665CBCAFA3972C97D5" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="71ABB2C2-1B62-46EF-909C-4B776963792D" Win64="yes">
+            <Component Id="cmpC4E700608349CF665CBCAFA3972C97D5" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="6FB821F1-C5AD-4AF8-A20D-CA11159A6DBE" Win64="yes">
                 <File Id="fil1DF140E242E0516FC834648682198DEB" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_ca.qm" />
             </Component>
-            <Component Id="cmp5E21471E711209461EE117CA6D437B58" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="CCB0E17A-D3D8-4C4B-A42C-3099C83B23F5" Win64="yes">
+            <Component Id="cmp5E21471E711209461EE117CA6D437B58" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="60175FE6-CAE7-45C5-ADCA-A1C00C265B00" Win64="yes">
                 <File Id="fil69504F5EEE94E94C79ACBC4DA13C8852" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_cs.qm" />
             </Component>
-            <Component Id="cmp04942AB9352FFF01492EFF2196659F62" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="25450239-72C0-4465-A487-EB0F5BF2AFC2" Win64="yes">
+            <Component Id="cmp04942AB9352FFF01492EFF2196659F62" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="82E58F7D-210A-497D-95F3-2A738A6F49DE" Win64="yes">
                 <File Id="filBC7B1AC41F9F2A4171647CC6E40A2503" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_da.qm" />
             </Component>
-            <Component Id="cmp9EFB5536F9091E56F94E8C4E3F5C5B95" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="18EB6538-99E0-4F1F-B3E8-D9FF6A810806" Win64="yes">
+            <Component Id="cmp9EFB5536F9091E56F94E8C4E3F5C5B95" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="290FC52B-60C3-46D1-8AEF-335ACC1CAE45" Win64="yes">
                 <File Id="fil245E59CDFE6F5815B64915105895A037" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_de.qm" />
             </Component>
-            <Component Id="cmpEA85B04EA963ECE44B6CAB982F6B15B6" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="CAA616D0-4822-453C-859A-9C96D52A3526" Win64="yes">
+            <Component Id="cmpEA85B04EA963ECE44B6CAB982F6B15B6" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="54FC2D4D-7441-4D8A-8264-3823D4B48169" Win64="yes">
                 <File Id="fil0F02F6530F453918465ED4BB588520EC" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_en.qm" />
             </Component>
-            <Component Id="cmp71F26B3F57189F303C6B1FD16EA99088" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="284D88C1-4F94-4450-9568-86F9133FD811" Win64="yes">
+            <Component Id="cmp71F26B3F57189F303C6B1FD16EA99088" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="DC6C856B-24DE-4B63-ABCD-743079538F4E" Win64="yes">
                 <File Id="filB459362F224375ACCA9BC3A054CB7070" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_es.qm" />
             </Component>
-            <Component Id="cmp745CE18CCB7C5EC95471A8270CC08AE7" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="951B0132-46E7-444B-9DE9-49504DACDD1E" Win64="yes">
+            <Component Id="cmp745CE18CCB7C5EC95471A8270CC08AE7" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="04E0D0FF-0562-49D7-8A46-5626BADC54AE" Win64="yes">
                 <File Id="filB46A6F2F27B1B92DA6EAD365C85D774A" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_fi.qm" />
             </Component>
-            <Component Id="cmp4509D6CF5C041F38A36B2803A6B61727" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="A5ED9929-099C-43CA-B89F-EFFA83DE3061" Win64="yes">
+            <Component Id="cmp4509D6CF5C041F38A36B2803A6B61727" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="02775492-35B0-4527-988D-85056B22E4B2" Win64="yes">
                 <File Id="fil0C09CDE794509C466C00E05AA538C5C4" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_fr.qm" />
             </Component>
-            <Component Id="cmp07345E9ED43035D0211C7F27747917DB" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="EE606B59-88D1-4C83-A8A9-2E9D461A60F1" Win64="yes">
+            <Component Id="cmp07345E9ED43035D0211C7F27747917DB" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="3ED2C81D-70F2-4BA3-AE52-DE347697CAF8" Win64="yes">
                 <File Id="filF75BB0FF176D0633D5B3EB201F0BDD50" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_gd.qm" />
             </Component>
-            <Component Id="cmp0896672658D1934EDF57F46F27694CCA" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="DC572F1F-CEC1-4838-9094-B70FD12D2031" Win64="yes">
+            <Component Id="cmp0896672658D1934EDF57F46F27694CCA" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="9377860A-4DFA-40A3-8593-97EDE555B69D" Win64="yes">
                 <File Id="filDEDE079BE98DFF251DDFC7FFE5D6380D" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_he.qm" />
             </Component>
-            <Component Id="cmpFC449896E41FEAF8D86ADD7E77AA9592" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="62173C6B-D4A6-4480-92CF-C445DE8B9CC3" Win64="yes">
+            <Component Id="cmpFC449896E41FEAF8D86ADD7E77AA9592" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="EDDDE1D2-8188-4976-8A47-3C8B7AB6DC0C" Win64="yes">
                 <File Id="filFA26621AC0636189A033E70784254C0B" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_hu.qm" />
             </Component>
-            <Component Id="cmp0D5B5D95E46068772A3D8981D39BC445" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="C5D6009A-9C70-4B57-A8CD-76EB55C8159D" Win64="yes">
+            <Component Id="cmp0D5B5D95E46068772A3D8981D39BC445" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="D8ECB5C2-F568-4047-A97A-57EA2DC165E6" Win64="yes">
                 <File Id="filFD979BD19045D203BB3F8F33E3C5B757" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_it.qm" />
             </Component>
-            <Component Id="cmp7BEFA730EDD2ADE010BF9732FED35F5D" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="D48FC102-1B41-415F-88AB-DAE617FADF01" Win64="yes">
+            <Component Id="cmp7BEFA730EDD2ADE010BF9732FED35F5D" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="D76B82A2-9C8F-4444-8A5E-091137E110B5" Win64="yes">
                 <File Id="filDDD73B80A1322B4CAB654436297B2B6E" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_ja.qm" />
             </Component>
-            <Component Id="cmpF31A8468417F365DA30C46314045FAE1" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="496334C8-F555-4316-9103-B17ACBFDFE29" Win64="yes">
+            <Component Id="cmpF31A8468417F365DA30C46314045FAE1" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="A28C4412-BFFB-4314-AFB0-966A086D1933" Win64="yes">
                 <File Id="fil927FAAC32FBDFADF3B1AD6CCA5F4606B" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_ko.qm" />
             </Component>
-            <Component Id="cmp2E091753CD8CE7432C7A83FBC0A322F5" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="8D6FBE47-B6BA-4AE5-A9FE-5B3C40DC21B8" Win64="yes">
+            <Component Id="cmp2E091753CD8CE7432C7A83FBC0A322F5" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="010E83D5-5A4B-4B4A-BF43-B9E8EC4396F7" Win64="yes">
                 <File Id="fil203200CF3AA9DF5524387452C9430C36" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_lv.qm" />
             </Component>
-            <Component Id="cmp084633DE724222D9591BF7AF849945DC" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="6D350B17-BBF0-4859-B5E7-88F43AE885C8" Win64="yes">
+            <Component Id="cmp084633DE724222D9591BF7AF849945DC" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="3C880111-F830-4846-9588-A5591F4227BC" Win64="yes">
                 <File Id="filF43E787009E4FE905D055992404AC8E3" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_pl.qm" />
             </Component>
-            <Component Id="cmpC7E4E76011047BEAFA24549274839F3D" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="A4FE097C-421C-46E3-812D-C418947ECD46" Win64="yes">
+            <Component Id="cmpC7E4E76011047BEAFA24549274839F3D" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="F16B7423-431F-48F6-8FA2-33E7F8F41646" Win64="yes">
                 <File Id="fil3F61A1F6C331280E984EA7E3311180B7" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_ru.qm" />
             </Component>
-            <Component Id="cmpB09F85D6E6CD7E34A701E18BDD2E4CE5" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="34572F4E-1904-4B3B-9EC4-AAC926963F4B" Win64="yes">
+            <Component Id="cmpB09F85D6E6CD7E34A701E18BDD2E4CE5" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="28B84225-A4AB-4A3D-B4F1-654BD26A1D62" Win64="yes">
                 <File Id="fil7766063465EF2C132EA38CBA4444CF2A" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_sk.qm" />
             </Component>
-            <Component Id="cmp55F7BCB5F86440117D5B0D2D765D8FF6" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="46BD7BEF-39F4-4736-ADEA-A4223BCCE9DE" Win64="yes">
+            <Component Id="cmp55F7BCB5F86440117D5B0D2D765D8FF6" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="08CF0639-7300-4205-A66B-A3BA5CD0DD8A" Win64="yes">
                 <File Id="filF57A17A4E382FDD3EA9AC99B85ABA120" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_uk.qm" />
             </Component>
-            <Component Id="cmp4CBE13F0AC5B05DC153B92F9B92365B9" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="39DD54C3-1EFE-4677-B53C-6DBC16C38B4F" Win64="yes">
+            <Component Id="cmp4CBE13F0AC5B05DC153B92F9B92365B9" Directory="dir75CBE86C6079D486D11839279B199CCE" Guid="137150EE-FBB3-4686-92FA-6AAAD1129BCC" Win64="yes">
                 <File Id="fil2CC2E4337C04FE2B1C4079FF73E8F01B" KeyPath="yes" Source=".\dist\App\PyQt5\Qt\translations\qtbase_zh_TW.qm" />
             </Component>
-            <Component Id="cmpD4D1915C3239D37D1B25EFFCD8EADE76" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="3CF78222-C4C7-4320-952D-A80CAF8D8D80" Win64="yes">
+            <Component Id="cmpD4D1915C3239D37D1B25EFFCD8EADE76" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="03094B34-F0C6-4B55-8BCC-6596D7FBCB5D" Win64="yes">
                 <File Id="fil922C975AF7921EA44750876F29B7B097" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\qaxcontainer.py" />
             </Component>
-            <Component Id="cmpFA6FF3F0171C6EE6A7DFDC3841898D2D" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="462EFA29-69F2-4D30-AFF1-54E3FC0A7B69" Win64="yes">
+            <Component Id="cmpFA6FF3F0171C6EE6A7DFDC3841898D2D" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="7DAA8296-0B97-4ED1-AEBA-FF0CB921DCF5" Win64="yes">
                 <File Id="filCD9B2FB8BC425AC45F8748820C98F671" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\qscintilla.py" />
             </Component>
-            <Component Id="cmpB4DB0C99BB8D8CB8406ED382CADE7F4F" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="45FFB82D-8CE1-477C-A6C2-D6467969E65D" Win64="yes">
+            <Component Id="cmpB4DB0C99BB8D8CB8406ED382CADE7F4F" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="A8A8278B-9CDE-4530-B566-60874A8DDA30" Win64="yes">
                 <File Id="fil1A0D187C38CF18652DBC271BA34D3A6E" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\qtcharts.py" />
             </Component>
-            <Component Id="cmp420862D24A36705879E3709F0862686E" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="972E18BD-3391-449C-A1FC-99D2713204C1" Win64="yes">
+            <Component Id="cmp420862D24A36705879E3709F0862686E" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="8539D762-A652-4515-A577-8C2D91579C0B" Win64="yes">
                 <File Id="filB1CE86B00DD7E8CAF10E0968CAA86228" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\qtprintsupport.py" />
             </Component>
-            <Component Id="cmp001917B1E1FCC38B1E5A571235D45F87" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="E578B109-2CA0-4EAF-86A3-1BF04663358B" Win64="yes">
+            <Component Id="cmp001917B1E1FCC38B1E5A571235D45F87" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="5EF2786F-F182-45C5-B0B5-9076DE8B9795" Win64="yes">
                 <File Id="filB16B5089A560D6799D5431B1D8C1A019" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\qtquickwidgets.py" />
             </Component>
-            <Component Id="cmp2797D660098CC64525746EBED2A7A204" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="794A0884-35A8-4880-81A3-6D624D4C8FDA" Win64="yes">
+            <Component Id="cmp2797D660098CC64525746EBED2A7A204" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="47D77890-8E64-48BD-A5E0-916145D9F426" Win64="yes">
                 <File Id="filD0CB8C5A1E255ADB6A414BA42591CA8D" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\qtwebenginewidgets.py" />
             </Component>
-            <Component Id="cmp1C04BB3C4667EE6C7EFB0FD517B32199" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="5928DE2F-50B6-42AF-AFEF-52FFDE39874B" Win64="yes">
+            <Component Id="cmp1C04BB3C4667EE6C7EFB0FD517B32199" Directory="dir9623077AC78286D4701CB12E0BFAF26F" Guid="484D49DD-E79E-4EAA-B297-42BBB0CE10B3" Win64="yes">
                 <File Id="filABD7971BD29EDE44E22BD947BDF504FC" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\qtwebkit.py" />
             </Component>
-            <Component Id="cmpD50E12AEAC84CE5846929A5B01391112" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="22476590-4CEA-47D1-AF3B-5707DCE1261B" Win64="yes">
+            <Component Id="cmpD50E12AEAC84CE5846929A5B01391112" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="B59923D4-5605-48B8-BA48-B80ED60E3AE4" Win64="yes">
                 <File Id="filA1902910E1CCA478D1263132B2810A88" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\__pycache__\qaxcontainer.cpython-36.pyc" />
             </Component>
-            <Component Id="cmp894B913223F55B6DBDB465178D16D5B8" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="F996B24A-9743-4D49-94E8-0978B48B4790" Win64="yes">
+            <Component Id="cmp894B913223F55B6DBDB465178D16D5B8" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="153C2411-F642-4E32-B916-B8FC9C2F4B64" Win64="yes">
                 <File Id="fil153D9DCB89514AD15FB153A5CEE0CB57" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\__pycache__\qscintilla.cpython-36.pyc" />
             </Component>
-            <Component Id="cmpE6055B52F9FD9A5A9BEC7AABF1A65827" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="266C1F14-330C-4F7C-924F-018FB21F0561" Win64="yes">
+            <Component Id="cmpE6055B52F9FD9A5A9BEC7AABF1A65827" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="1371ADD7-5673-4563-8F79-130C496FEC56" Win64="yes">
                 <File Id="filEAD5EC4F485E1BBEDA3A155F654255D0" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\__pycache__\qtcharts.cpython-36.pyc" />
             </Component>
-            <Component Id="cmp28FC4FD51106AABB568633259BC562B8" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="4B1CF6BA-5979-43D8-9F98-F8B9B425D541" Win64="yes">
+            <Component Id="cmp28FC4FD51106AABB568633259BC562B8" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="4FBB84DD-6B53-4F4B-ABC8-5FCA9D1C3CA7" Win64="yes">
                 <File Id="fil273A1576F2752189922D4C19CE1F57E4" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\__pycache__\qtprintsupport.cpython-36.pyc" />
             </Component>
-            <Component Id="cmpAD248AD54F02F00224AE474D4266180C" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="40A82B05-4CBB-4B18-9263-FEDA084FB865" Win64="yes">
+            <Component Id="cmpAD248AD54F02F00224AE474D4266180C" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="9D4316F9-4BB4-4835-9215-06132248720E" Win64="yes">
                 <File Id="fil98AEBBFCB0111E83BBE24B55CEAD2A07" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\__pycache__\qtquickwidgets.cpython-36.pyc" />
             </Component>
-            <Component Id="cmpBC2DD89552801BD0879DA916F7970F00" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="216904E3-F8EF-4028-A846-1ADB0AD3E6ED" Win64="yes">
+            <Component Id="cmpBC2DD89552801BD0879DA916F7970F00" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="AF9BB98A-6CF2-4BDB-9B44-16A723E312E1" Win64="yes">
                 <File Id="filF0B60D0B56BF1EE6883E3370DC6124DB" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\__pycache__\qtwebenginewidgets.cpython-36.pyc" />
             </Component>
-            <Component Id="cmpDB3B62B4FECA442237D494CC33693C1F" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="F197E025-9A4F-475F-8751-EA41A5575B93" Win64="yes">
+            <Component Id="cmpDB3B62B4FECA442237D494CC33693C1F" Directory="dir823C8E696026996CDE9C0E36FD91B23E" Guid="6C01BF5F-0A2B-4CBA-895D-50E6A204D09B" Win64="yes">
                 <File Id="fil783EA8698639F9C5217B82E048E4E9D4" KeyPath="yes" Source=".\dist\App\PyQt5\uic\widget-plugins\__pycache__\qtwebkit.cpython-36.pyc" />
             </Component>
-            <Component Id="cmp9328CFFA10A72DCA6244A094882E743E" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="DA7C2BA6-10B0-4FEB-9784-E0902ED8CB9D" Win64="yes">
-                <File Id="filB15D33FCA16268EADB7561290B6A042A" KeyPath="yes" Source=".\dist\App\Scripts\App.Configuration.sql" />
-            </Component>
-            <Component Id="cmpAB15A296B2F88DF301B737A2684D1DD7" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="B885A8E5-E81C-437F-8D5E-9B46FD06B531" Win64="yes">
-                <File Id="fil926C29F86F306162744523656323D5DB" KeyPath="yes" Source=".\dist\App\Scripts\App.Styles.sql" />
-            </Component>
-            <Component Id="cmp1899D281FBBE802DA3A5D2B2B1A6888B" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="52BE4C9F-EBB9-4C7D-9C5E-870146D8D946" Win64="yes">
-                <File Id="filF00F68507649C353F767710194B2110B" KeyPath="yes" Source=".\dist\App\Scripts\ID2.sql" />
-            </Component>
-            <Component Id="cmp25C8D669EA57C7CB8FB21DF72D911BAC" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="8ECD6ED3-4AA2-4F3F-8824-8432868D0377" Win64="yes">
-                <File Id="fil292BED55CBA1824114163985FED586B9" KeyPath="yes" Source=".\dist\App\Scripts\Project.Projects.sql" />
-            </Component>
-            <Component Id="cmpC74F152CC7CB81437DE255FEF0E116BB" Directory="dir33A2F09B010813323099475AA1D7838F" Guid="B674ADC0-920E-4405-9C05-C51D519F5C14" Win64="yes">
-                <File Id="fil778AB2D7B3461A68DDFB821575F91837" KeyPath="yes" Source=".\dist\App\Scripts\SQLite_Project.tables.sql" />
-            </Component>
-            <Component Id="cmp210C8BA2BBA3E313ACA873372CE730D2" Directory="dirA354B468353E829B671E63FA008B58F2" Guid="0117F921-68D5-4612-94EC-226EE908124C" Win64="yes">
+            <Component Id="cmp210C8BA2BBA3E313ACA873372CE730D2" Directory="dirA354B468353E829B671E63FA008B58F2" Guid="B1A37B22-F3F0-468E-9D90-3C9F59C8590A" Win64="yes">
                 <File Id="filCBF806722FB142303398DFB85AEF7E86" KeyPath="yes" Source=".\dist\App\sqlalchemy\cprocessors.cp36-win_amd64.pyd" />
             </Component>
-            <Component Id="cmp6A32CAF494998331E991DE30CD012AB0" Directory="dirA354B468353E829B671E63FA008B58F2" Guid="59E91813-B005-47EE-8C30-5134DDDE96B9" Win64="yes">
+            <Component Id="cmp6A32CAF494998331E991DE30CD012AB0" Directory="dirA354B468353E829B671E63FA008B58F2" Guid="CF541F19-BC4B-4C00-9411-87DDA799102C" Win64="yes">
                 <File Id="filBF56428DEC76E1E186CA8FF6CC7D631B" KeyPath="yes" Source=".\dist\App\sqlalchemy\cresultproxy.cp36-win_amd64.pyd" />
             </Component>
-            <Component Id="cmp01F60765E183177588555ECC93E482D4" Directory="dirA354B468353E829B671E63FA008B58F2" Guid="74F97EA6-2954-4972-96BF-8AA00B37F8ED" Win64="yes">
+            <Component Id="cmp01F60765E183177588555ECC93E482D4" Directory="dirA354B468353E829B671E63FA008B58F2" Guid="751D2DAB-9038-4AA5-900B-39FF5F98C972" Win64="yes">
                 <File Id="fil7CF854ABA4F2CD7E8DBEEC0B695E5F89" KeyPath="yes" Source=".\dist\App\sqlalchemy\cutils.cp36-win_amd64.pyd" />
             </Component>
-            <Component Id="cmp143674DD03C257B184FC9E612FE0C231" Directory="dirF6CA20EBB048934B5A0428563D0FA356" Guid="76EF18DC-A9E2-4737-B0A0-54C4C2FA6CAC" Win64="yes">
+            <Component Id="cmp143674DD03C257B184FC9E612FE0C231" Directory="dirF6CA20EBB048934B5A0428563D0FA356" Guid="6F9C97CE-4979-40D0-B5B9-855783F3D276" Win64="yes">
                 <File Id="fil64AB855191750457A729F819DAA10461" KeyPath="yes" Source=".\dist\App\stylesheets\americano.qss" />
             </Component>
-            <Component Id="cmp0566750D907F04B4A5B28DE9CA244A66" Directory="dirF6CA20EBB048934B5A0428563D0FA356" Guid="2C2D218D-DFB1-45C5-AD11-308822756B4C" Win64="yes">
+            <Component Id="cmp0566750D907F04B4A5B28DE9CA244A66" Directory="dirF6CA20EBB048934B5A0428563D0FA356" Guid="C7D3D94B-0BFF-475D-A76F-C19D507A81B3" Win64="yes">
                 <File Id="filD2DEA6A31D12DC9B47632DE9B6BF96FA" KeyPath="yes" Source=".\dist\App\stylesheets\coffee.qss" />
             </Component>
-            <Component Id="cmp3545A2ED41998E6D569CB3D9BA732BAA" Directory="dirF6CA20EBB048934B5A0428563D0FA356" Guid="84F63E44-885D-4B68-A6C5-27F3B593DB85" Win64="yes">
-                <File Id="filEEE3346029CFDB8D7D12316A5ADEC587" KeyPath="yes" Source=".\dist\App\stylesheets\pagefold.qss" />
+            <Component Id="cmpB6F0FBE4205BC1D66213E1A317D88966" Directory="dirF6CA20EBB048934B5A0428563D0FA356" Guid="40E51DDB-BA49-4DC8-872B-1355CE892154" Win64="yes">
+                <File Id="fil57106A50D42B01BA609128A20397BF06" KeyPath="yes" Source=".\dist\App\stylesheets\latte.qss" />
             </Component>
-            <Component Id="cmpD1FB1056320377C1C803E1C7EB1B1846" Directory="dirF6CA20EBB048934B5A0428563D0FA356" Guid="66FD36DC-4E7F-4B6A-9C6D-92872E254FC0" Win64="yes">
+            <Component Id="cmpD1FB1056320377C1C803E1C7EB1B1846" Directory="dirF6CA20EBB048934B5A0428563D0FA356" Guid="6C1DF155-B220-4B39-848B-275C2E371F97" Win64="yes">
                 <File Id="fil807A129F8252C073FED3ACFFBE4C70D2" KeyPath="yes" Source=".\dist\App\stylesheets\ribbon.qss" />
             </Component>
-            <Component Id="cmpD1E5148F5139FA84AA57284CB4CD0761" Directory="dir2858E6757EEE7E6A5EF2129279E3829D" Guid="1DA52928-1930-4262-B20B-50E215695AE0" Win64="yes">
+            <Component Id="cmpD1E5148F5139FA84AA57284CB4CD0761" Directory="dir2858E6757EEE7E6A5EF2129279E3829D" Guid="70562F9E-0195-4DC2-B10F-9B6D49EE9D9E" Win64="yes">
                 <File Id="fil7652DAB1A1B016F952987F37D6AFD0D8" KeyPath="yes" Source=".\dist\App\translate\ja_jp.qm" />
             </Component>
-            <Component Id="cmp93D08E0DB045B72FCBDF73C7EE85A7CE" Directory="dir2858E6757EEE7E6A5EF2129279E3829D" Guid="5B2F238D-C44A-4067-8D12-3B11D8CE569F" Win64="yes">
+            <Component Id="cmp93D08E0DB045B72FCBDF73C7EE85A7CE" Directory="dir2858E6757EEE7E6A5EF2129279E3829D" Guid="5ACDAD0C-2EEB-461B-8F84-EE959639D001" Win64="yes">
                 <File Id="fil8BE6D90D1830F4B1D44B5C0B1FC12B4B" KeyPath="yes" Source=".\dist\App\translate\ko_kr.qm" />
             </Component>
         </ComponentGroup>
     </Fragment>
     <Fragment>
-        <DirectoryRef Id="dirA3D7EF843ACC83D2E3C9C01BBF3BBD99">
-            <Directory Id="dir03FFB8A30B6FAE1278F1BC2593CD3D76" Name="core" />
-        </DirectoryRef>
-    </Fragment>
-    <Fragment>
-        <DirectoryRef Id="dirA3D7EF843ACC83D2E3C9C01BBF3BBD99">
-            <Directory Id="dir1A0615162D20AB2C84016F5954C6E22B" Name="fft" />
-        </DirectoryRef>
-    </Fragment>
-    <Fragment>
-        <DirectoryRef Id="dir06F962092CAFAD736E2E47442677063D">
-            <Directory Id="dir3ED8F6497517110F0BBDE0E57D49740D" Name="tests" />
-        </DirectoryRef>
-    </Fragment>
-    <Fragment>
         <DirectoryRef Id="dirC2E3E238A9038D3B90F99E903C25E23D">
             <Directory Id="dir47E1267F9B45FEDC6FBA5AC6631D80CE" Name="platformthemes" />
-        </DirectoryRef>
-    </Fragment>
-    <Fragment>
-        <DirectoryRef Id="dirA3D7EF843ACC83D2E3C9C01BBF3BBD99">
-            <Directory Id="dir5B7E6D2285D1DD45A3DE50429742BEFC" Name="linalg" />
-        </DirectoryRef>
-    </Fragment>
-    <Fragment>
-        <DirectoryRef Id="dir3ED8F6497517110F0BBDE0E57D49740D">
-            <Directory Id="dir736CDDA7EDAF746EA439549D60950551" Name="data" />
         </DirectoryRef>
     </Fragment>
     <Fragment>
@@ -647,11 +537,6 @@
     <Fragment>
         <DirectoryRef Id="dir9623077AC78286D4701CB12E0BFAF26F">
             <Directory Id="dir823C8E696026996CDE9C0E36FD91B23E" Name="__pycache__" />
-        </DirectoryRef>
-    </Fragment>
-    <Fragment>
-        <DirectoryRef Id="dirA3D7EF843ACC83D2E3C9C01BBF3BBD99">
-            <Directory Id="dir9385CC6B178D3CCE8B89B8C7D212E9D7" Name="random" />
         </DirectoryRef>
     </Fragment>
     <Fragment>
