@@ -118,7 +118,6 @@ if __name__ == '__main__':
     if QDialog.Accepted == dlg.exec_():
         if dlg.selected is not None:
             AppDocData.instance().current_project = dlg.selected
-            # AppDocData.instance().ex = exceptionHandler
             main_wnd = MainWindow.instance()
             main_wnd.show()
             sys.exit(app.exec_())

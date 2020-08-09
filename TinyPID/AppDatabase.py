@@ -4,6 +4,7 @@
 from enum import Enum
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+import sqlalchemy.sql.default_comparator
 
 import sqlite3
 # import pymssql

@@ -48,6 +48,8 @@ class AppDocData(SingletonInstane):
 
     def build_app_database(self) -> None:
         """build application database"""
+        pass
+        """
         from App import App
         from AppDatabase import AppDatabase, DBType
         from Models.Project import Project
@@ -60,6 +62,7 @@ class AppDocData(SingletonInstane):
             with AppDatabase(db_type=DBType.SQLITE, host=None, user=None, password=None, db_path=app_database_filepath) as database:
                 Project.__table__.create(bind=database.engine, checkfirst=True)
                 Configuration.__table__.create(bind=database.engine, checkfirst=True)
+        """
 
     def get_projects(self):
         from App import App
@@ -108,7 +111,6 @@ class AppDocData(SingletonInstane):
 
     def get_app_configs(self, section, key=None):
         """get application configurations"""
-
         res = []
 
         db_path = self.get_app_db_path()
@@ -145,7 +147,6 @@ class AppDocData(SingletonInstane):
 
     def get_configs(self, section, key=None):
         """get configurations"""
-
         res = []
 
         with sqlite3.connect(self.activeDrawing.path) as conn:
@@ -228,7 +229,6 @@ class AppDocData(SingletonInstane):
 
     def delete_app_configs(self, section, key=None):
         """delete application configurations"""
-
         # Creates or opens a file called mydb with a SQLite3 DB
         dbPath = self.get_app_db_path()
         with sqlite3.connect(dbPath) as conn:
@@ -262,4 +262,3 @@ class AppDocData(SingletonInstane):
     @current_project.setter
     def current_project(self, value):
         self._current_project = value
-

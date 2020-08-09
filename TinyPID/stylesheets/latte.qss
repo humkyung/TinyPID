@@ -78,6 +78,18 @@ QRadioButton::indicator {
     height: 13px;
 }
 
+/* Customize arrows. */
+
+*::down-arrow, *::menu-indicator {
+    width: 7px;
+    height: 7px;
+}
+
+*::up-arrow {
+    width: 7px;
+    height: 7px;
+}
+
 /* Customize push buttons and comboboxes. Our read-only combobox
    is very similar to a push button, so they share the same border image. */
 

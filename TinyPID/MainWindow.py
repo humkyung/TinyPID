@@ -7,8 +7,10 @@ import subprocess
 from functools import partial
 import asyncio
 
+"""
 import cv2
 import numpy as np
+"""
 import uuid
 
 from PyQt5.QtCore import *
@@ -30,7 +32,7 @@ import PlacePolygonCommand
 """
 
 from UI.MainWindow_UI import Ui_MainWindow
-from QtImageViewer import QtImageViewer
+# from QtImageViewer import QtImageViewer
 from SingletonInstance import SingletonInstane
 
 sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)) + '\\Shapes')
@@ -88,7 +90,7 @@ class MainWindow(QMainWindow, Ui_MainWindow, SingletonInstane):
     def __init__(self):
         """MainWindow constructor"""
         from App import App
-        from QtImageViewerScene import QtImageViewerScene
+        #from QtImageViewerScene import QtImageViewerScene
 
         super(self.__class__, self).__init__()
         self.setupUi(self)
@@ -117,6 +119,7 @@ class MainWindow(QMainWindow, Ui_MainWindow, SingletonInstane):
         # set title
         self.setWindowTitle(app_doc_data.current_project.name)
 
+        """
         self._scene = QtImageViewerScene(self)
 
         self.graphicsView = QtImageViewer(self)
@@ -127,6 +130,7 @@ class MainWindow(QMainWindow, Ui_MainWindow, SingletonInstane):
         self.graphicsView.setScene(self._scene)
 
         self.verticalLayout.addWidget(self.graphicsView)
+        """
 
         # connect signals and slots
         self.actionNew.triggered.connect(self.on_new)
@@ -3079,61 +3083,3 @@ class MainWindow(QMainWindow, Ui_MainWindow, SingletonInstane):
 
         return itemList
 
-    def make_diff_image(self):
-        """ make diff image """
-        # test
-
-        from RecognitionDialog import Worker
-        from symbol import Symbol
-        import math
-        from PIL import Image
-
-        app_doc_data = AppDocData.instance()
-        img = app_doc_data.imgSrc.copy()
-
-        # check break
-        symbols = [item for item in self.graphicsView.scene().items() if issubclass(type(item), SymbolSvgItem)]
-
-        for symbol in symbols:
-            rect = symbol.sceneBoundingRect()
-            sName = symbol.name
-            sType = symbol.type
-            sp = (rect.x(), rect.y())
-            w, h = rect.width(), rect.height()
-            rotatedAngle = round(math.degrees(symbol.angle))
-            detectFlip = symbol.flip
-
-            dummySym = Symbol(sName, sType, sp, w, h, 0, 0, 0, rotatedAngle,
-                                   1, 0, 1, 0,
-                                   ','.join(str(x) for x in [0, 0]),
-                                   '/'.join('{},{},{},{}'.format(param[0], param[1], param[2], param[3]) for param in
-                                            []),
-                                   'dummy', 'dummy', 0, detectFlip=detectFlip,
-                                   hasInstrumentLabel=0, text_area='')
-
-            Worker.remove_detected_symbol_image(dummySym, img, lock=False)
-
-        Image.fromarray(img).show()
-
-if __name__ == '__main__':
-    import locale
-    from PyQt5.QtCore import QTranslator
-    from License import QLicenseDialog
-    from ProjectDialog import Ui_Dialog
-    from App import App
-
-    app = App(sys.argv)
-    try:
-        if True == QLicenseDialog.check_license_key():
-            dlg = Ui_Dialog()
-            selectedProject = dlg.showDialog()
-            if selectedProject is not None:
-                AppDocData.instance().setCurrentProject(selectedProject)
-                app._mainWnd = MainWindow.instance()
-                app._mainWnd.show()
-                sys.exit(app.exec_())
-    except Exception as ex:
-        print('error occurred({}) in {}:{}'.format(ex, sys.exc_info()[-1].tb_frame.f_code.co_filename,
-                                                   sys.exc_info()[-1].tb_lineno))
-    finally:
-        pass

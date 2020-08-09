@@ -1,0 +1,1 @@
+.\TinyPID\venv\scripts\activate.bat & pip install -r .\TinyPID\requirements.txt & pyinstaller .\App.spec --onedir -p ".\TinyPID\venv\Lib\site-packages\PyQt5" -w --log-level=DEBUG -y & deactivate.bat
